@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title><?if($META_TITLE$)?>$META_TITLE$<?else?><?if($ENTRY_MODE$ == "spec")?>Спецификация <?endif?><?if($ENTRY_MODE$ == "imgs")?>Изображения <?endif?><?if($ENTRY_MODE$ == "comm")?>Отзывы <?endif?>$ENTRY_TITLE$ - $MODULE_NAME$ - $SITE_NAME$<?endif?></title>
+<meta name="keywords" content="$ENTRY_TITLE$, $CAT_NAME$, $MODULE_NAME$, $SITE_NAME$" />
+<?$META_DESCRIPTION$?>
+
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/default.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/style.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/animate.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/mobile.css" />
+
+<link rel="icon" type="image/x-icon" href="$HOME_PAGE_LINK$favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="$HOME_PAGE_LINK$favicon.ico" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous" />
+<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+$GLOBAL_AHEADER$
+		<section id="contentbody">
+			<div class="contentcenter">
+				$GLOBAL_CLEFTER$
+				<div class="content">
+					<!-- <body> -->
+					<table style="font-size: 12px;">
+						<tr>
+							<td>$SHOP_PATH$</td>
+							<?if($EDIT_ENTRY_LINK$)?><td align="right">[ <a href="$EDIT_ENTRY_LINK$"><!--<s4443>-->Редактировать товар<!--</s>--></a> ]</td><?endif?>
+						</tr>
+					</table>
+					<hr/>
+<!-- Микроразметка vCard -->
+<div itemscope itemtype="http://schema.org/Product">
+	<div id="product" class="col1-3">
+		<!-- Левая часть товара -->
+		<div>
+			$IMGS_ARRAY_JS$
+			<script type="text/javascript">
+				function _bldCont(indx){
+					var bck=indx-1;var nxt=indx+1;
+					if (bck<0){bck = allEntImgs$ID$.length-1;}
+					if (nxt>=allEntImgs$ID$.length){nxt=0;}
+					var imgs='';
+					if (allEntImgs$ID$.length>1){
+						for (var i=0;i<allEntImgs$ID$.length;i++){var img=i+1;
+							if(allEntImgs$ID$[i][0].length<1){continue;}
+							if (i==indx){imgs += '<b class="pgSwchA">'+img+'</b> ';}
+						else {imgs += '<a class="pgSwch" href="javascript://" rel="nofollow" onclick="_bldCont('+i+');return false;">'+img+'</a> ';}
+					}
+					imgs = '<div align="center" style="padding:8px 0 5px 0;white-space:nowrap;overflow:auto;overflow-x:auto;overflow-y:hidden;"><a class="pgSwch" href="javascript://" rel="nofollow" onclick="_bldCont('+bck+');return false;">&laquo; Back</a> '+imgs+'<a class="pgSwch" href="javascript://" rel="nofollow" onclick="_bldCont('+nxt+');return false;">Next &raquo;</a> </div> ';}
+					var hght = parseInt(allEntImgs$ID$[indx][2]); if ($.browser.msie) { hght += 28; };
+					_picsCont = '<div id="_prCont" style="position:relative;"><img alt="" border="0" src="' + allEntImgs$ID$[indx][0] + '"/>'+imgs+'</div>';
+					new _uWnd('wnd_prv', "Изображения товара", 10, 10, { waitimages:300000, autosizewidth:1, hideonresize:1, autosize:1, fadetype:1, closeonesc:1, align:'center', min:0, max:0, resize:1 }, _picsCont);
+				}
+			</script>
+
+
+			<!-- Большая фотография товара -->
+			<div class="shopItem product1" style="width: 100%;">
+				<div class="productimg">
+					<img class="gphoto" src="$THUMB$" onclick="_bldCont1($ID$, this.getAttribute('idx'));" id="ipreview" idx="0" alt="$ENTRY_TITLE$" title="Кликните для увеличения изображения" />
+					<?if($STOCK$)?><div class="other">В наличии</div><?endif?>
+					<?if ($MONTH$-substr($ADD_DATE$,3,2))<=1 || $ADD_DATE$='Сегодня' ?><div class="new">NEW</div><?endif?>
+					<?if($OTHER1$='new')?><div class="new">$OTHER1$</div><?endif?>
+					<?if($OTHER1$='hot')?><div class="hot">$OTHER1$</div><?endif?>
+					<?if($OTHER1$='хит')?><div class="hit">$OTHER1$</div><?endif?>
+				</div>
+			</div>
+
+
+			
+			
+			<!-- Дополнительные фотографии товара -->
+			<div class="productimgs">
+				<?if($THUMB_1$)?>
+				<img alt="$ENTRY_TITLE$" src="$THUMB$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$THUMB$'; el.setAttribute('idx',0);">
+				<img alt="$ENTRY_TITLE$" src="$THUMB_1$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$THUMB_1$'; el.setAttribute('idx',1);">
+				<?endif?>
+				<?if($THUMB_2$)?><img alt="$ENTRY_TITLE$" src="$THUMB_2$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$THUMB_2$'; el.setAttribute('idx',2);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$" /><?endif?>
+				<?if($THUMB_3$)?><img alt="$ENTRY_TITLE$" src="$THUMB_3$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$THUMB_3$'; el.setAttribute('idx',3);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$" /><?endif?>
+				<?if($THUMB_4$)?><img alt="$ENTRY_TITLE$" src="$THUMB_4$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$THUMB_4$'; el.setAttribute('idx',4);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$" /><?endif?>
+				<?if($THUMB_5$)?><img alt="$ENTRY_TITLE$" src="$THUMB_5$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$THUMB_5$'; el.setAttribute('idx',5);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$" /><?endif?>
+				<?if($THUMB_6$)?><img alt="$ENTRY_TITLE$" src="$THUMB_6$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$THUMB_6$'; el.setAttribute('idx',6);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$" /><?endif?>
+				<?if($THUMB_7$)?><img alt="$ENTRY_TITLE$" src="$THUMB_7$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$THUMB_7$'; el.setAttribute('idx',7);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$" /><?endif?>
+				<?if($THUMB_8$)?><img alt="$ENTRY_TITLE$" src="$THUMB_8$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$THUMB_8$'; el.setAttribute('idx',8);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$" /><?endif?>
+				<?if($THUMB_9$)?><img alt="$ENTRY_TITLE$" src="$THUMB_9$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$THUMB_9$'; el.setAttribute('idx',9);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$" /><?endif?>
+				<?if($THUMB_10$)?><img alt="$ENTRY_TITLE$" src="$THUMB_10$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$THUMB_10$'; el.setAttribute('idx',10);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$" /><?endif?>
+				<?if($THUMB_11$)?><img alt="$ENTRY_TITLE$" src="$THUMB_11$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$THUMB_11$'; el.setAttribute('idx',11);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$" /><?endif?>
+				<?if($THUMB_12$)?><img alt="$ENTRY_TITLE$" src="$THUMB_12$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$THUMB_12$'; el.setAttribute('idx',12);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$" /><?endif?>
+				<?if($THUMB_13$)?><img alt="$ENTRY_TITLE$" src="$THUMB_13$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$THUMB_13$'; el.setAttribute('idx',13);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$" /><?endif?>
+				<?if($THUMB_14$)?><img alt="$ENTRY_TITLE$" src="$THUMB_14$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$THUMB_14$'; el.setAttribute('idx',14);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$" /><?endif?>
+				<?if($THUMB_15$)?><img alt="$ENTRY_TITLE$" src="$THUMB_15$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$THUMB_15$'; el.setAttribute('idx',15);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$" /><?endif?>
+			</div>
+		</div><!-- end. Левая часть товара -->
+
+		<!-- Правая часть товара -->
+		<div id="goods_cont">
+		<div class="goods-list with-clear">
+
+			<!-- vCard Название товара -->
+			<div itemprop="name"><h1>$ENTRY_TITLE$ <?if($MODER_PANEL$)?> $MODER_PANEL$ <?endif?></h1></div>
+			<?if($RATING$)?>
+				<td class="shop-itempage-rating-td">
+					<div class="shop-itempage-rating">
+						<?$RSTARS$('30','/.s/img/stars/3/30.png','1','float')?>
+						<div class="shop-itempage-rating-text">Рейтинг: <b><span id="entRating$ID$">$RATING$</span></b>/<span id="entRated$ID$">$RATED$</span></div>
+					</div>
+				</td>
+			<?endif?>
+			<!-- vCard Главная фотография товара -->
+			<div style="display: none !important;">
+				<a itemprop="image" href=​"$HOME_PAGE_LINK$$THUMB$"><img src=​"$HOME_PAGE_LINK$$THUMB$" title="$ENTRY_TITLE$"></a>
+			</div>
+			<br/>
+			
+			<!-- Блок с ценой товара -->
+			<!--ENTRY$ID$-->
+			<div class="shopItem product1" style="float: right; width: auto !important; max-width: 300px;">
+				<div class="value-numb">
+					<button class="tic-tac minus" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+					<input type="number" id="qid-$ID$-basket" value="1" min="1" max="$STOCK$" step="1" readonly class="form-control" size="3" onfocus="this.select()" oninput="return checkNumber(this, event, '1');">
+					<button class="tic-tac plus" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+				</div>
+				<div class="price">
+					<div class="goods-list">$2BASKET$</div>
+					<small>Цена:</small>
+					<?if($PRICE_RAW$='1')?>
+						По запросу
+					<?else?>
+						<?if($PRICE$)?>
+							<?if($PRICE_OLD$)?><sup><s>$PRICE_OLD$</s></sup> <span class="newprice">$PRICE$</span><?else?>$PRICE$<?endif?> <!--<i class="fas fa-ruble-sign"></i>-->
+							<?else?>
+							по запросу
+						<?endif?>
+					<?endif?>
+				</div>
+				<!--
+				<div class="otherdev">
+					Краткое или подробное описание способа доставки.
+				</div>
+				-->
+			</div>
+			<!--/ENTRY$ID$-->
+
+			<!-- Технические характеристики товара -->
+			<ul class="shop-options" id="id-$ID$-options">
+				<?if($ART_NO$!=" ")?><li><span class="opt">Артикул:</span> <span class="val art">$ART_NO$</span></li><?endif?>
+				<br/>
+				<li><span class="opt">Остаток:</span> <span class="val"><?if($STOCK$)?>$STOCK$<?else?>Под заказ<?endif?></span></li>
+				<?if($WARR$)?><li><span class="opt">Гарантия:</span> <span class="val">$WARR$</span></li><?endif?>
+				<?if($ENTRY_TYPE$ == 1)?><li><span class="opt">Размер:</span> <span class="val">$FILE_SIZE$</span></li><?endif?>
+				
+				<?if($OTHER2$)?><li><span class="opt">Размер:</span> <span class="val">$OTHER2$</span></li><?endif?>
+				<?if($OTHER3$)?><li><span class="opt">Цвет:</span> <span class="val">$OTHER3$</span></li><?endif?>
+				<?if($WEIGHT$)?><li><span class="opt">Вес:</span> <span class="val">$WEIGHT$</span> $UNIT$</li><?endif?>
+				<br/>
+				<br/>
+				$OPTIONS$
+				<br/>
+				<?if($TAGS$)?>Теги: $TAGS$<?endif?>
+			</ul>
+
+		</div>
+		</div>
+	</div>
+
+
+	<!-- Табы переключения товара -->
+	<ul class="shop-tabs with-clear">
+		<?if($ENTRY_MODE$ == 'desc')?>
+			<li class="postRest1"><a href="$DESC_LINK$">Описание</a></li>
+			<?else?>
+			<li><a href="$DESC_LINK$">Описание</a></li>
+		<?endif?>
+		<?if($SPEC$)?>
+			<?if($ENTRY_MODE$ == 'spec')?>
+				<li class="postRest1"><a href="$SPEC_LINK$">Спецификация</a></li>
+				<?else?>
+				<li><a href="$SPEC_LINK$">Спецификация</a></li>
+			<?endif?>
+		<?endif?>
+		<?if($PHOTO_1$)?>
+			<?if($ENTRY_MODE$ == 'imgs')?><li class="postRest1"><a href="$IMGS_LINK$">Изображения</a></li><?endif?>
+		<?endif?>
+		<?if($COM_IS_ACTIVE$)?>
+			<?if($ENTRY_MODE$ == 'comm')?>
+				<li class="postRest1"><a href="$COMM_LINK$">Отзывы ($COM_NUM_ENTRIES$)</a></li>
+				<?else?>
+				<li><a href="$COMM_LINK$">Отзывы ($COM_NUM_ENTRIES$)</a></li>
+			<?endif?>
+		<?endif?>
+	</ul>
+
+
+	<div class="shop-info">
+		<div itemprop="description">
+			<?if($ENTRY_MODE$ == 'desc')?>
+				<?if($DESCRIPTION$)?>
+					$DESCRIPTION$
+					<?else?> 
+					<i>Описание товара отсутствует...</i>
+				<?endif?>
+			<?endif?>
+		</div>
+									
+		<?if($ENTRY_MODE$ == 'spec')?>
+		$SPEC$
+		<?endif?>
+		
+		<?if($ENTRY_MODE$ == 'imgs')?>
+		<div class="shop-imgs with-clear">
+			<?if($THUMB$)?><img alt="$ENTRY_TITLE$" src="$THUMB$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO$'; el.setAttribute('idx',0);"><?endif?>
+			<?if($THUMB_1$)?><img alt="$ENTRY_TITLE$" src="$THUMB_1$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_1$'; el.setAttribute('idx',1);"><?endif?>
+			<?if($THUMB_2$)?><img alt="$ENTRY_TITLE$" src="$THUMB_2$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_2$'; el.setAttribute('idx',2);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_3$)?><img alt="$ENTRY_TITLE$" src="$THUMB_3$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_3$'; el.setAttribute('idx',3);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_4$)?><img alt="$ENTRY_TITLE$" src="$THUMB_4$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_4$'; el.setAttribute('idx',4);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_5$)?><img alt="$ENTRY_TITLE$" src="$THUMB_5$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_5$'; el.setAttribute('idx',5);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_6$)?><img alt="$ENTRY_TITLE$" src="$THUMB_6$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_6$'; el.setAttribute('idx',6);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_7$)?><img alt="$ENTRY_TITLE$" src="$THUMB_7$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_7$'; el.setAttribute('idx',7);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_8$)?><img alt="$ENTRY_TITLE$" src="$THUMB_8$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_8$'; el.setAttribute('idx',8);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_9$)?><img alt="$ENTRY_TITLE$" src="$THUMB_9$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_9$'; el.setAttribute('idx',9);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_10$)?><img alt="$ENTRY_TITLE$" src="$THUMB_10$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_10$'; el.setAttribute('idx',10);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_11$)?><img alt="$ENTRY_TITLE$" src="$THUMB_11$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_11$'; el.setAttribute('idx',11);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_12$)?><img alt="$ENTRY_TITLE$" src="$THUMB_12$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_12$'; el.setAttribute('idx',12);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_13$)?><img alt="$ENTRY_TITLE$" src="$THUMB_13$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_13$'; el.setAttribute('idx',13);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_14$)?><img alt="$ENTRY_TITLE$" src="$THUMB_14$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_14$'; el.setAttribute('idx',14);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_15$)?><img alt="$ENTRY_TITLE$" src="$THUMB_15$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_15$'; el.setAttribute('idx',15);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_16$)?><img alt="$ENTRY_TITLE$" src="$THUMB_16$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_16$'; el.setAttribute('idx',16);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_17$)?><img alt="$ENTRY_TITLE$" src="$THUMB_17$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_17$'; el.setAttribute('idx',17);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_18$)?><img alt="$ENTRY_TITLE$" src="$THUMB_18$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_18$'; el.setAttribute('idx',18);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_19$)?><img alt="$ENTRY_TITLE$" src="$THUMB_19$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_19$'; el.setAttribute('idx',19);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_20$)?><img alt="$ENTRY_TITLE$" src="$THUMB_20$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_20$'; el.setAttribute('idx',20);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_21$)?><img alt="$ENTRY_TITLE$" src="$THUMB_21$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_21$'; el.setAttribute('idx',21);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_22$)?><img alt="$ENTRY_TITLE$" src="$THUMB_22$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_22$'; el.setAttribute('idx',22);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_23$)?><img alt="$ENTRY_TITLE$" src="$THUMB_23$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_23$'; el.setAttribute('idx',23);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_24$)?><img alt="$ENTRY_TITLE$" src="$THUMB_24$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_24$'; el.setAttribute('idx',24);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_25$)?><img alt="$ENTRY_TITLE$" src="$THUMB_25$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_25$'; el.setAttribute('idx',25);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_26$)?><img alt="$ENTRY_TITLE$" src="$THUMB_26$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_26$'; el.setAttribute('idx',26);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_27$)?><img alt="$ENTRY_TITLE$" src="$THUMB_27$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_27$'; el.setAttribute('idx',27);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_28$)?><img alt="$ENTRY_TITLE$" src="$THUMB_28$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_28$'; el.setAttribute('idx',28);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_29$)?><img alt="$ENTRY_TITLE$" src="$THUMB_29$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_29$'; el.setAttribute('idx',29);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+			<?if($THUMB_30$)?><img alt="$ENTRY_TITLE$" src="$THUMB_30$" class="gphoto" onclick="var el=getElementById('ipreview'); el.src='$PHOTO_30$'; el.setAttribute('idx',30);" alt="$ENTRY_TITLE$" title="$ENTRY_TITLE$"><?endif?>
+		</div>
+		<?endif?>
+	</div>
+
+
+	<?if($ENTRY_MODE$ == 'comm')?>
+		<?if($COM_IS_ACTIVE$)?>
+			<?if($COM_CAN_READ$)?>
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr><td width="60%" height="25"><!--<s5183>-->Всего комментариев<!--</s>-->: <b>$COM_NUM_ENTRIES$</b></td><td align="right" height="25">$COM_PAGE_SELECTOR$</td></tr>
+				<tr><td colspan="2">$COM_BODY$</td></tr>
+				<tr><td colspan="2" align="center">$COM_PAGE_SELECTOR1$</td></tr>
+				<tr><td colspan="2" height="10"></td></tr>
+			</table>
+			<?endif?>
+
+			<?if($COM_CAN_ADD$)?>
+			$COM_ADD_FORM$
+			<?else?>
+			<?if($USER_LOGGED_IN$)?><?else?><div align="center" class="commReg"><!--<s5237>-->Добавлять комментарии могут только зарегистрированные пользователи.<!--</s>--><br />[ <a href="$REGISTER_LINK$"><!--<s3089>-->Регистрация<!--</s>--></a> | <a href="$LOGIN_LINK$"><!--<s3087>-->Вход<!--</s>--></a> ]</div><?endif?>
+			<?endif?>
+		<?endif?>
+	<?endif?>
+
+
+	<?if($RECOMMENDED_PRODUCTS_PRESENT$)?>
+		<div id="recommended_products">
+			<div id="recommended_products_title"><h2 align="center">С этим товаром покупают</h2></div>
+			<hr/>
+			<?$RECOMMENDED_PRODUCTS$()?>
+		</div>
+	<?endif?>
+	
+	
+	<?if($LASTV_4$)?>
+		<br/>
+		<h3 align="center">Просмотренные ранее товары</h3>
+		<hr/>
+		$LASTV_4$
+	<?endif?>
+</div>
+					<!-- </body> -->
+				</div> <!-- end .content -->
+			</div><!-- end .contentcenter -->
+		</section>  
+$GLOBAL_BFOOTER$
+</body>
+</html>	

@@ -1,0 +1,31 @@
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="eBlock">
+	<tr>
+		<td style="padding:3px;">
+			<?if($MODER_PANEL$)?><div style="float:right">$MODER_PANEL$</div><?endif?>
+			<div class="eTitle" style="text-align:left;">
+				<h3><a href="$ENTRY_URL$">$TITLE$</a></h3>
+			</div>
+			<br/>
+			<?if($MESSAGE$)?>
+				<div class="eMessage">
+					$MESSAGE$
+				</div>
+			<?endif?>
+
+			<?if($ATTACHMENTS$)?><div class="eAttach">Прикрепления: $ATTACHMENTS$</div><?endif?>
+
+			<?if($MODER_PANEL$)?>
+			<div class="eDetails">
+				<?if($RATING$)?><div style="float:right"><?$RSTARS$('15','/.s/t/1081/rating15.png','0','float')?></div><?endif?>
+				<?if($CATEGORY_NAME$)?><span class="e-category"><span class="ed-title">Категория:</span> <span class="ed-value"><a href="$CATEGORY_URL$">$CATEGORY_NAME$</a></span></span><span class="ed-sep"> | </span><?endif?>
+				<span class="e-reads"><span class="ed-title">Просмотров:</span> <span class="ed-value">$READS$</span></span><span class="ed-sep"> | </span>
+				<span class="e-date"><span class="ed-title">Дата:</span> <span class="ed-value" title="$TIME$">$DATE$</span></span>
+				<?if($COMMENTS_URL$)?><span class="ed-sep"> | </span><a class="e-comments" href="$COMMENTS_URL$">Комментарии ($COMMENTS_NUM$)</a><?endif?>
+			</div>
+			<?endif?>
+		</td>
+	</tr>
+</table>
+<br/>
+<hr/>
+<br/>

@@ -1,0 +1,18 @@
+<div class="commentli">
+	<div class="commentimg">
+		<?if($IMG_SMALL_URL1$)?>
+			<img src="$IMG_SMALL_URL1$" alt="Отзыв о $SITE_NAME$ от $TITLE$" title="Отзыв о $SITE_NAME$ от $TITLE$" />
+		<?else?>
+			<img src="/img/nophoto.jpg" alt="Отзыв о $SITE_NAME$ от $TITLE$" title="Отзыв о $SITE_NAME$ от $TITLE$" />
+		<?endif?>
+	</div>
+	
+	<h3>$TITLE$ <?if($MODER_PANEL$)?><div style="float:right">$MODER_PANEL$</div><?endif?></h3>
+	$MESSAGE$<br/>
+	<?if($MODER_PANEL$)?>
+		<br/>
+		<?if($OTHER1$)?>Телефон: <b>$OTHER1$</b><br/><?endif?>
+		<?if($OTHER2$)?>Город: <b>$OTHER2$</b><br/><?endif?>
+		<?if($AUTHOR_EMAIL$)?>E-mail: <b>$AUTHOR_EMAIL$</b><?endif?>
+	<?endif?>
+</div>

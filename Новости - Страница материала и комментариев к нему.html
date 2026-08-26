@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>$TITLE_BAR$ | $SITE_NAME$</title>
+<meta name="keywords" content="$TITLE_BAR$, $SITE_NAME$" />
+<meta name="description" content="$TITLE_BAR$ | $SITE_NAME$" />
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="$SITE_NAME$"/>
+<meta property="og:title" content="$TITLE_BAR$ | $SITE_NAME$"/>
+<meta property="og:description" content="$TITLE_BAR$ | $SITE_NAME$"/>
+<meta property="og:url" content="$HOME_PAGE_LINK$$REQUEST_URI$"/>
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="$HOME_PAGE_LINK$img/promo.png">
+
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/default.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/style.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/animate.css" />
+
+<link rel="icon" type="image/x-icon" href="$HOME_PAGE_LINK$favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="$HOME_PAGE_LINK$favicon.ico" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous" />
+<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+$GLOBAL_AHEADER$
+	<section id="contentbody">
+		<div class="contentcenter">
+			$GLOBAL_CLEFTER$
+			<div class="content">
+				<!-- <body> -->
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 12px;">
+						<tbody>
+							<tr>
+								<td><a href="$HOME_PAGE_LINK$"><!--<s5176>-->Главная<!--</s>--></a> &raquo; $DATE_BAR$ &raquo; $ENTRY_NAME$</td>
+								<?if($ADD_ENTRY_LINK$)?><td align="right"><a href="$ADD_ENTRY_LINK$">Добавить новость</a></td><?endif?>
+							</tr>
+						</tbody>
+					</table>
+					<hr/>
+<table border="0" width="100%" cellspacing="1" cellpadding="2" class="eBlock">
+<tr><td width="100%"><div class="eTitle"><div style="float:right;font-size:9px;">$ADD_TIME$ $MODER_PANEL$</div><h1>$ENTRY_NAME$</h1></div></td></tr>
+<tr><td class="eMessage"><br/>$MESSAGE$ <?if($ATTACHMENTS$)?><div style="text-align:left;" class="eAttach"><!--<s3172>-->Прикрепления<!--</s>-->: $ATTACHMENTS$</div><?endif?></td></tr>
+<tr><td colspan="2" class="eDetails">
+<?if($RATING$)?><div style="float:right"><?$RSTARS$('15','/.s/t/1081/rating15.png','1','float')?></div>
+<?endif?><?if($CAT_NAME$)?><span class="e-category"><span class="ed-title"><!--<s3179>-->Категория<!--</s>-->:</span> <span class="ed-value"><a href="$CAT_URL$">$CAT_NAME$</a></span></span><span class="ed-sep"> | </span><?endif?>
+<span class="e-reads"><span class="ed-title"><!--<s3177>-->Просмотров<!--</s>-->:</span> <span class="ed-value">$READS$</span></span><span class="ed-sep"> | </span>
+<?if($TAGS$)?><span class="ed-sep"> | </span><span class="e-tags"><span class="ed-title"><!--<s5308>-->Теги<!--</s>-->:</span> <span class="ed-value">$TAGS$</span></span><?endif?>
+<?if($RATING$)?><span class="ed-sep"> | </span><span class="e-rating"><span class="ed-title"><!--<s3119>-->Рейтинг<!--</s>-->:</span> <span class="ed-value"><span id="entRating$ID$">$RATING$</span>/<span id="entRated$ID$">$RATED$</span></span></span><?endif?></td></tr>
+</table>
+
+<?if($COM_IS_ACTIVE$)?>
+<?if($COM_CAN_READ$)?>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><td width="60%" height="25"><!--<s5183>-->Всего комментариев<!--</s>-->: <b>$COM_NUM_ENTRIES$</b></td><td align="right" height="25">$COM_PAGE_SELECTOR$</td></tr>
+<tr><td colspan="2">$COM_BODY$</td></tr>
+<tr><td colspan="2" align="center">$COM_PAGE_SELECTOR1$</td></tr>
+<tr><td colspan="2" height="10"></td></tr>
+</table>
+<?endif?>
+
+<?if($COM_CAN_ADD$)?>
+$COM_ADD_FORM$
+<?else?>
+<?if($USER_LOGGED_IN$)?><?else?><div align="center" class="commReg"><!--<s5237>-->Добавлять комментарии могут только зарегистрированные пользователи.<!--</s>--><br />[ <a href="$REGISTER_LINK$"><!--<s3089>-->Регистрация<!--</s>--></a> | <a href="$LOGIN_LINK$"><!--<s3087>-->Вход<!--</s>--></a> ]</div><?endif?>
+<?endif?>
+<?endif?>
+						<!-- </body> -->
+			</div><!-- end .content -->
+		</div><!-- end .contentcenter -->
+	</section>
+$GLOBAL_BFOOTER$
+</body>
+</html>

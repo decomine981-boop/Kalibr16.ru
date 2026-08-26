@@ -1,0 +1,19 @@
+<span class="uphoto">
+	<span class="photo-title">
+		<h4 align="center">$PHOTO_NAME$</h4>
+	</span>
+	<span style="max-width: 100%; display: inline-block; position: relative;">
+		<?if($MODER_PANEL$)?><span style="position: absolute;z-index: 100;right: 15px;white-space: nowrap;">$MODER_PANEL$</span><?endif?>
+		<span class="ph-wrap">
+			$PHOTO$
+			<a href="$PHOTO_LIGHTBOX_URL$" data-url="$PHOTO_URL$" class="ph-link" title="Увеличить" />
+			<span class="ph-tc">
+				<span class="ph-data">
+					<span class="ph-date">Увеличить</span>
+					<span class="ph-descr"><?if(len($PHOTO_DESCR$)>120)?><?substr($PHOTO_DESCR$,0,117)?>...<?else?>$PHOTO_DESCR$<?endif?></span>
+				</span>
+			</span>
+		</a>
+	</span>
+</span>
+</span>

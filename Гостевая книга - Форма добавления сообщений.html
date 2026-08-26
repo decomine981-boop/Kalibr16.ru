@@ -1,0 +1,37 @@
+<table border="0" width="100%" cellspacing="1" cellpadding="2" class="commTable">
+	<tr>
+		<td class="commTd2" colspan="2">$ERROR$</td>
+	</tr>
+	<?if(!$USER_LOGGED_IN$)?>
+		<tr>
+			<td class="commTd1" width="15%" nowrap>Имя *:</td>
+			<td class="commTd2">$NAME_FL$</td>
+		</tr>
+		<?if($EMAIL_FL$)?>
+			<tr>
+				<td class="commTd1">Email *:</td>
+				<td class="commTd2">$EMAIL_FL$</td>
+			</tr>
+		<?endif?>
+		<?if($WWW_FL$)?><tr><td class="commTd1">WWW:</td><td class="commTd2">$WWW_FL$</td></tr><?endif?>
+	<?endif?>
+	<?if($ICQ_FL$)?><tr><td width="15%" class="commTd1">ICQ:</td><td class="commTd2">$ICQ_FL$</td></tr><?endif?>
+	<?if($COUNTRY_FL$)?><tr><td width="15%" class="commTd1">Страна:</td><td class="commTd2">$COUNTRY_FL$</td></tr><?endif?>
+	<?if($CITY_FL$)?><tr><td width="15%" class="commTd1">Город:</td><td class="commTd2">$CITY_FL$</td></tr><?endif?>
+	<?if($STATE_FL$)?><tr><td width="15%" class="commTd1">Телефон:</td><td class="commTd2">$STATE_FL$</td></tr><?endif?>
+	<tr>
+		<td class="commTd2" colspan="2">
+			<div style="padding-bottom:2px">$BBCODES$</div>
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<td valign="top">$MESSAGE_FL$</td>
+					<?if($SMILES$)?><td width="5%" valign="top" align="center" style="padding-left:3px;">$SMILES$</td><?endif?>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<?if($SECURITY_FL$)?><tr><td class="commTd1">Код *:</td><td class="commTd2">$SECURITY_FL$</td></tr><?endif?>
+	<tr>
+		<td class="commTd2" colspan="2" align="center"><input class="commSbmFl" type="submit" id="gbsbm" value="Добавить отзыв" /></td>
+	</tr>
+</table>

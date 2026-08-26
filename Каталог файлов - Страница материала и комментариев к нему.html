@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>$ENTRY_TITLE$ - $CAT_NAME$ <?if($SECTION_NAME$)?>- $SECTION_NAME$<?endif?> - $MODULE_NAME$ | $SITE_NAME$</title>
+<meta name="keywords" content="$ENTRY_TITLE$, $CAT_NAME$<?if($SECTION_NAME$)?>, $SECTION_NAME$<?endif?>, $MODULE_NAME$, $SITE_NAME$" />
+<meta name="description" content="$ENTRY_TITLE$ - $CAT_NAME$ <?if($SECTION_NAME$)?>- $SECTION_NAME$<?endif?> - $MODULE_NAME$ | $SITE_NAME$" />
+
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/default.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/style.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/animate.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/mobile.css" />
+
+<link rel="icon" type="image/x-icon" href="$HOME_PAGE_LINK$favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="$HOME_PAGE_LINK$favicon.ico" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous" />
+<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+$GLOBAL_AHEADER$
+        <section id="contentbody">
+        	<div class="contentcenter">
+                $GLOBAL_CLEFTER$
+				<div class="content">
+<!-- <body> -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" style="font-size: 12px;">
+<tr>
+ <td width="80%"><a href="$HOME_PAGE_LINK$">Главная</a> &raquo; <a href="$MODULE_URL$">$MODULE_NAME$</a> <?if($SECTION_NAME$)?>&raquo; <a href="$SECTION_URL$">$SECTION_NAME$</a><?endif?> &raquo; <a href="$CAT_URL$">$CAT_NAME$</a></td>
+ <td align="right" style="white-space: nowrap;"><?if($ADD_ENTRY_LINK$)?>[ <a href="$ADD_ENTRY_LINK$">Добавить прайс-лист</a> ]<?endif?></td>
+ </tr>
+ </table>
+ <hr />
+					<div class="eTitle" style="padding-bottom:3px;"><?if($MODER_PANEL$)?><div style="float:right">$MODER_PANEL$</div><?endif?><h1>$ENTRY_TITLE$</h1> $VERSION$</div>
+ <table border="0" width="100%" cellspacing="0" cellpadding="2" class="eBlock">
+ <tr><td width="85%">
+ <?if($FILE_URL$ || $RFILE_URL$ || $SCREEN_URL$)?>[ <?if($FILE_URL$)?><a href="$FILE_URL$"><!--<s5223>-->Скачать с сервера<!--</s>--></a> ($FILE_SIZE$)<?endif?>
+ <?if($RFILE_URL$)?> &middot; <a href="$RFILE_URL$" target="_blank"><!--<s5224>-->Скачать удаленно<!--</s>--></a> ($RFILE_SIZE$)<?endif?>
+ <?if($SCREEN_URL$)?> &middot; <a href="$SCREEN_URL$" target="_blank"><!--<s5187>-->Скриншот<!--</s>--></a><?endif?> ]<?endif?>
+ </td><td align="right" style="font-size:7pt;white-space: nowrap;">$ADD_DATE$, $ADD_TIME$</td></tr>
+ <tr><td class="eText" colspan="2">$MESSAGE$</td></tr>
+ <tr><td class="eDetails1" colspan="2"><?if($RATING$)?><div style="float:right"><?$RSTARS$('15','/.s/t/1081/rating15.png','1','float')?></div>
+ <?endif?><span class="e-category"><span class="ed-title"><!--<s3179>-->Категория<!--</s>-->:</span> <span class="ed-value"><a href="$CAT_URL$">$CAT_NAME$</a></span></span><?if($USER$)?><span class="ed-sep"> | </span><span class="e-author"><span class="ed-title"><!--<s3178>-->Добавил<!--</s>-->:</span> <span class="ed-value"><a href="$PROFILE_URL$">$USER$</a></span></span><?endif?>
+ <?if($TAGS$)?><span class="ed-sep"> | </span><span class="e-tags"><span class="ed-title"><!--<s5308>-->Теги<!--</s>-->:</span> <span class="ed-value">$TAGS$</span></span><?endif?>
+ </td></tr>
+ <tr><td class="eDetails2" colspan="2"><span class="e-reads"><span class="ed-title"><!--<s3177>-->Просмотров<!--</s>-->:</span> <span class="ed-value">$READS$</span></span><span class="ed-sep"> | </span><span class="e-loads"><span class="ed-title"><!--<s3181>-->Загрузок<!--</s>-->:</span> <span class="ed-value">$LOADS$</span></span>
+ <?if($COMMENTS_NUM$)?><span class="ed-sep"> | </span><span class="e-comments"><span class="ed-title"><!--<s3039>-->Комментарии<!--</s>-->:</span> <span class="ed-value">$COMMENTS_NUM$</span></span><?endif?>
+ <?if($RATING$)?><span class="ed-sep"> | </span><span class="e-rating"><span class="ed-title"><!--<s3119>-->Рейтинг<!--</s>-->:</span> <span class="ed-value"><span id="entRating$ID$">$RATING$</span>/<span id="entRated$ID$">$RATED$</span></span></span><?endif?></td></tr>
+ </table>
+ 
+ <?if($COM_IS_ACTIVE$)?>
+ <?if($COM_CAN_READ$)?>
+ <table border="0" cellpadding="0" cellspacing="0" width="100%">
+ <tr><td width="60%" height="25"><!--<s5183>-->Всего комментариев<!--</s>-->: <b>$COM_NUM_ENTRIES$</b></td><td align="right" height="25">$COM_PAGE_SELECTOR$</td></tr>
+ <tr><td colspan="2">$COM_BODY$</td></tr>
+ <tr><td colspan="2" align="center">$COM_PAGE_SELECTOR1$</td></tr>
+ <tr><td colspan="2" height="10"></td></tr>
+ </table>
+ <?endif?>
+ 
+ <?if($COM_CAN_ADD$)?>
+ $COM_ADD_FORM$
+ <?else?>
+ <?if($USER_LOGGED_IN$)?><?else?><div align="center" class="commReg"><!--<s5237>-->Добавлять комментарии могут только зарегистрированные пользователи.<!--</s>--><br />[ <a href="$REGISTER_LINK$"><!--<s3089>-->Регистрация<!--</s>--></a> | <a href="$LOGIN_LINK$"><!--<s3087>-->Вход<!--</s>--></a> ]</div><?endif?>
+ <?endif?>
+ <?endif?>
+<!-- </body> -->
+				</div><!-- end .content -->
+			</div><!-- end .contentcenter -->
+		</section>
+$GLOBAL_BFOOTER$
+</body>
+</html>

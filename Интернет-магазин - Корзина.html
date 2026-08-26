@@ -1,0 +1,152 @@
+<?if($NUM_ENTRIES$)?>
+<a href="/shop/checkout">
+<?endif?>
+	<i class="fas fa-shopping-basket"></i>
+	<?if($ORDER_NUM$)?><div class="mobile-cart-numb">$ORDER_NUM$</div><?endif?>
+<?if($NUM_ENTRIES$)?>
+</a>
+<?endif?>
+<div class="submenu">
+	<div class="header-cart">
+		<h4>Корзина</h4>
+		<div id="shop-basket">
+			<?if($BODY$)?><ul>$BODY$</ul><?endif?>
+
+			<?if($NUM_ENTRIES$)?>
+				Товаров в корзине: <b>$ORDER_NUM$</b> шт.
+				<?if($ORDER_DISCOUNT$)?>
+					<?if($DISCOUNT_INFO$)?>
+						<div class="disc-info">$DISCOUNT_INFO$</div>
+					<?endif?>
+				<?endif?>
+				<br/>
+				<a class="basketclear" href="javascript://" rel="nofollow" onclick="return clearBasket();">Очистить</a> | <a class="basketorder" href="/shop/checkout">Оформить заказ</a>
+			<?else?>
+				<div class="empty">Ваша корзина пуста</div>
+			<?endif?>
+		</div>
+	</div>
+</div>
+
+
+
+<script><!--
+	var lock_buttons = 0;
+
+	function clearBasket(){
+		if(lock_buttons) return false; else lock_buttons = 1;
+		var el = $('#shop-basket');
+		if(el.length){ var g=document.createElement("div"); $(g).addClass('myWinGrid').attr("id",'shop-basket-fade').css({"left":"0","top":"0","position":"absolute","border":"#CCCCCC 1px solid","width":$(el).width()+'px',"height":$(el).height()+'px',"z-index":5}).hide().on('mousedown', function(e){e.stopPropagation();e.preventDefault();_uWnd.globalmousedown();}).html('<div class="myWinLoad" style="margin:5px;"></div>'); $(el).append(g); $(g).show(); }
+		_uPostForm('',{type:'POST',url:'/shop/basket',data:{'mode':'clear'}});
+		ga_event('basket_clear');
+		return false;
+	}
+
+	function removeBasket(id){
+		if(lock_buttons) return false; else lock_buttons = 1;
+		$('#basket-item-'+id+' .sb-func').removeClass('remove').addClass('myWinLoadS').attr('title','');
+		_uPostForm('',{type:'POST',url:'/shop/basket',data:{'mode':'del', 'id':id}});
+		return false;
+	}
+
+	function add2Basket(id, pref){
+		if(lock_buttons) return false; else lock_buttons = 1;
+		var opt = [], err_msg = '', err_msgs = [], radio_options = {}, el_id = {};
+		$('#b'+pref+'-'+id+'-basket').attr('disabled','disabled');
+		$('#'+pref+'-'+id+'-basket').removeClass('done').removeClass('err').removeClass('add').addClass('wait').attr('title','');
+		$('#'+pref+'-'+id+'-options-selectors').find('select, input').each(function(){
+			switch (this.type) {
+				case 'radio':
+					el_id = this.id.split('-');
+					((typeof (radio_options[el_id[3]]) == 'undefined') && (radio_options[el_id[3]] = { 'val': - 1, 'id': this.id }));
+					(this.checked && (radio_options[el_id[3]]['val'] = this.value));
+					break;
+				case 'checkbox':
+					if (this.checked && (this.value !== '')) {
+						if(this.value !== ''){
+							opt.push(this.id.split('-')[3]+'-'+this.value);
+						} else {
+							err_msgs.push({'id':this.id.split('-')[3], 'msg':'<li>'+$(this).parent().parent().find('span.opt').html().replace(':', '')+'</li>'});
+						}
+					}
+					break;
+				default:
+					if (this.value !== '') {
+						opt.push(this.id.split('-')[3]+'-'+this.value);
+					} else {
+						err_msgs.push({'id':this.id.split('-')[3], 'msg':'<li>'+$(this).parent().parent().find('span.opt').html().replace(':', '')+'</li>'});
+					}
+			}
+		});
+		for(i in radio_options){
+			if(radio_options[i]['val'] != -1){
+				opt.push(radio_options[i]['id'].split('-')[3]+'-'+radio_options[i]['val']);
+			}else{
+				err_msgs.push({'id':radio_options[i]['id'].split('-')[3], 'msg':'<li>'+$('#'+radio_options[i]['id']).parent().parent().parent().find('span.opt').html().replace(':', '')+'</li>'});
+			}
+		}
+
+		err_msgs.sort(function(a, b){ return ((a['id'] > b['id']) ? 1 : -1); });
+		for (var i=0; i<err_msgs.length; i++) { err_msg += err_msgs[i]['msg']; }
+
+		if(err_msg == ''){
+			_uPostForm('',{type:'POST',url:'/shop/basket',data:{'mode':'add', 'id':id, 'pref':pref, 'opt':opt.join(':'), 'cnt':$('#q'+pref+'-'+id+'-basket').val()}});
+			ga_event('basket_add');
+		}else{
+			lock_buttons = 0;
+			shop_alert('<div class="MyWinError">Опции<ul>'+err_msg+'</ul>обязательны для выбора</div>','Замечания','warning',350,100,{tm:8000,align:'left',icon:'/.s/img/icon/warning.png', 'onclose': function(){  $('#b'+pref+'-'+id+'-basket').removeAttr('disabled'); $('#'+pref+'-'+id+'-basket').removeClass('wait').addClass('add');  }});
+		}
+		return false;
+	}
+
+	function buyNow(id, pref){
+		if(lock_buttons) return false; else lock_buttons = 1;
+		var opt = [], err_msg = '', err_msgs = [], radio_options = {}, el_id = {};
+		$('#b'+pref+'-'+id+'-buynow').attr('disabled', 'disabled');
+		$('#'+pref+'-'+id+'-buynow').removeClass('done').removeClass('err').removeClass('now').addClass('wait').attr('title','');
+		$('#'+pref+'-'+id+'-options-selectors').find('select, input').each(function(){
+			switch (this.type) {
+				case 'radio':
+					el_id = this.id.split('-');
+					((typeof (radio_options[el_id[3]]) == 'undefined') && (radio_options[el_id[3]] = { 'val': - 1, 'id': this.id }));
+					(this.checked && (radio_options[el_id[3]]['val'] = this.value));
+					break;
+				case 'checkbox':
+					if (this.checked && (this.value !== '')) {
+						if(this.value !== ''){
+							opt.push(this.id.split('-')[3]+'-'+this.value);
+						} else {
+							err_msgs.push({'id':this.id.split('-')[3], 'msg':'<li>'+$(this).parent().parent().find('span.opt').html().replace(':', '')+'</li>'});
+						}
+					}
+					break;
+				default:
+					if (this.value !== '') {
+						opt.push(this.id.split('-')[3]+'-'+this.value);
+					} else {
+						err_msgs.push({'id':this.id.split('-')[3], 'msg':'<li>'+$(this).parent().parent().find('span.opt').html().replace(':', '')+'</li>'});
+					}
+			}
+		});
+		for(i in radio_options){
+			if(radio_options[i]['val'] != -1){
+				opt.push(radio_options[i]['id'].split('-')[3]+'-'+radio_options[i]['val']);
+			}else{
+				err_msgs.push({'id':radio_options[i]['id'].split('-')[3], 'msg':'<li>'+$('#'+radio_options[i]['id']).parent().parent().parent().find('span.opt').html().replace(':', '')+'</li>'});
+			}
+		}
+
+		err_msgs.sort(function(a, b){ return ((a['id'] > b['id']) ? 1 : -1); });
+		for (var i=0; i<err_msgs.length; i++) { err_msg += err_msgs[i]['msg']; }
+
+		if(err_msg == ''){
+			_uPostForm('',{type:'POST',url:'/shop/basket',data:{'mode':'add', 'id':id, 'pref':pref, 'opt':opt.join(':'), 'cnt':$('#q'+pref+'-'+id+'-basket').val(), 'now':1}});
+			ga_event('basket_buynow');
+		}else{
+			lock_buttons = 0;
+			shop_alert('<div class="MyWinError">Опции<ul>'+err_msg+'</ul>обязательны для выбора</div>','Замечания','warning',350,100,{tm:8000,align:'left',icon:'/.s/img/icon/warning.png', 'onclose': function(){ $('#b'+pref+'-'+id+'-buynow').removeAttr('disabled'); $('#'+pref+'-'+id+'-buynow').removeClass('wait').addClass('add');  }});
+		}
+		return false;
+	}
+	//-->
+	</script>

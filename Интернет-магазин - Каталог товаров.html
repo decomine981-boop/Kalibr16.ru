@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title><?if($META_TITLE$)?>$META_TITLE$<?else?>$CAT_NAME$ - $MODULE_NAME$<?endif?> | $SITE_NAME$</title>
+<meta name="keywords" content="$CAT_NAME$, $MODULE_NAME$, $SITE_NAME$" />
+<meta name="description" content="<?if($META_TITLE$)?>$META_TITLE$<?else?>$CAT_NAME$ - $MODULE_NAME$<?endif?> | $SITE_NAME$">
+
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/default.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/style.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/animate.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/mobile.css" />
+
+<link rel="icon" type="image/x-icon" href="$HOME_PAGE_LINK$favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="$HOME_PAGE_LINK$favicon.ico" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous" />
+<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+$GLOBAL_AHEADER$
+		<section id="contentbody">
+			<div class="contentcenter">
+				$GLOBAL_CLEFTER$
+				<div class="content">
+					<!-- <body> -->
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="font-size: 12px;">
+						<tr>
+							<td>$SHOP_PATH$</td>
+							<?if($ADD_ENTRY_LINK$)?><td align="right" style="white-space: nowrap;">[ <a href="$ADD_ENTRY_LINK$"><!--<s4391>-->Добавить товар<!--</s>--></a> ]</td><?endif?>
+							</tr>
+					</table>
+					<hr/>
+					<h1>$CAT_NAME$</h1>
+					<br/>
+					<div class="shop-cat-descr with-clear">
+						<?if($CAT_IMG$)?>
+						<img src="$CAT_IMG$" alt="$CAT_NAME$" style="width: 150px; float:left; margin: 0 15px 5px 0;">
+						<?endif?>
+						$CAT_DESCR$
+					</div>
+					<?$CATALOG$(2,0)?>
+
+
+					<?if($NUM_ENTRIES$='0')?>
+					<?else?>
+					<hr />
+					$SPEC_FILTER$<br/>
+					$SPEC_FILTER_TAGS$
+
+					<table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td><!--<s4419>-->Доступно позиций<!--</s>-->: <b><?$DRAW_BLOCK$('NUM_ENTRIES','ne_cont')?></b><td>
+							<td align="right"><?$DRAW_BLOCK$('SORT_SELECTOR','slist')?></td>
+						</tr>
+					</table>
+					<hr/>
+					<?endif?>
+					$BODY$
+					<hr/>
+					<div align="center">
+						$PAGE_MORE$
+						<?$DRAW_BLOCK$('PAGE_PREV','pprev')?>
+						<?$DRAW_BLOCK$('PAGE_SELECTOR','plist')?>
+						<?$DRAW_BLOCK$('PAGE_NEXT','pnext')?>
+					</div>
+					<!-- </body> -->
+				</div><!-- end .content -->
+			</div><!-- end .contentcenter -->
+		</section>
+$GLOBAL_BFOOTER$
+</body>
+</html>

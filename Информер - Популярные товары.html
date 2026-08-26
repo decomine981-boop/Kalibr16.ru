@@ -1,0 +1,25 @@
+<li>
+	<a href="$ENTRY_URL$">
+		<div class="product1bg">
+			<img src="$THUMB$" alt="$NAME$" title="$NAME$" />
+		</div>
+		<h3>$NAME$</h3>
+	</a>
+	<!--
+	<p>Описание преимущества краткое или подробное в одно предложение.</p>
+	-->
+	<div class="price">
+		<div class="goods-list"><div id="id-228-basket" class="basket add" onclick="add2Basket('228','id')" title="В корзину"></div></div>
+		<?if($PRICE$)?>
+			<small>Цена:</small>
+			<?if($PRICE_OLD$)?><sup><s>$PRICE_OLD$</s></sup> <span class="newprice">$PRICE$</span><?else?>$PRICE$<?endif?> <i class="fas fa-ruble-sign"></i>
+		<?endif?>
+	</div>
+</li>
+
+
+<div class="goods-list" align="center">
+<a style="font-size:14px" href="$ENTRY_URL$">$NAME$</a>
+<div style="font-size: 18px;"><?if($PRICE_OLD$)?><s>$PRICE_OLD$</s> <span class="newprice">$PRICE$</span><?else?>$PRICE$<?endif?></div>
+<a href="$ENTRY_URL$"><img alt="" src="$THUMB$" class="gphoto" id="$BLOCK_PREF$-gphoto-$ID$" border="0"></a>
+</div>

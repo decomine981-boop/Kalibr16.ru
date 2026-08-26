@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>$TITLE_BAR$ | $SITE_NAME$</title>
+<meta name="keywords" content="$TITLE_BAR$, $SITE_NAME$" />
+<meta name="description" content="$TITLE_BAR$ | $SITE_NAME$" />
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="$SITE_NAME$"/>
+<meta property="og:title" content="$TITLE_BAR$ | $SITE_NAME$"/>
+<meta property="og:description" content="$TITLE_BAR$ | $SITE_NAME$"/>
+<meta property="og:url" content="$HOME_PAGE_LINK$$REQUEST_URI$"/>
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="$HOME_PAGE_LINK$img/promo.png">
+
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/default.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/style.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/animate.css" />
+
+<link rel="icon" type="image/x-icon" href="$HOME_PAGE_LINK$favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="$HOME_PAGE_LINK$favicon.ico" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous" />
+<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+$GLOBAL_AHEADER$
+	<section id="contentbody">
+		<div class="contentcenter">
+			$GLOBAL_CLEFTER$
+			<div class="content">
+				<!-- <body> -->
+				<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 12px;">
+					<tbody>
+						<tr>
+							<td><a href="$HOME_PAGE_LINK$"><!--<s5176>-->Главная<!--</s>--></a> &raquo; $DATE_BAR$</td>
+							<?if($ADD_ENTRY_LINK$)?><td align="right"><a href="$ADD_ENTRY_LINK$">Добавить новость</a></td><?endif?>
+						</tr>
+					</tbody>
+				</table>
+				<hr/>
+				$BODY$
+				<!-- </body> -->
+			</div><!-- end .content -->
+		</div><!-- end .contentcenter -->
+	</section>
+$GLOBAL_BFOOTER$
+</body>
+</html>

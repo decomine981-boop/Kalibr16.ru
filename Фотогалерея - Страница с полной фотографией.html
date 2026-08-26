@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>$MODULE_NAME$ | $SITE_NAME$</title>
+<meta name="keywords" content="$MODULE_NAME$, $SITE_NAME$" />
+<meta name="description" content="$MODULE_NAME$ | $SITE_NAME$">
+
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/default.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/style.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$$HOME_PAGE_LINK$css/animate.css" />
+
+<link rel="icon" type="image/x-icon" href="$HOME_PAGE_LINK$favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="$HOME_PAGE_LINK$favicon.ico" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous" />
+<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+$GLOBAL_AHEADER$
+		<section id="contentbody">
+			<div class="contentcenter">
+				$GLOBAL_CLEFTER$
+				<div class="content">
+<!-- <body> -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" style="font-size: 12px;"><tr><td width="70%"><a href="$HOME_PAGE_LINK$"><!--<s5176>-->Главная<!--</s>--></a> &raquo; <a href="$MODULE_URL$"><!--<s5169>-->Фотоальбом<!--</s>--></a> <?if($SECTION_NAME$)?>&raquo; <a href="$SECTION_URL$">$SECTION_NAME$</a><?endif?> &raquo; <a href="$CAT_URL$">$CAT_NAME$</a> &raquo; $PHOTO_NAME$</td><td align="right" style="white-space: nowrap;"><?if($ADD_ENTRY_LINK$)?>[ <a href="$ADD_ENTRY_LINK$"><!--<s5160>-->Добавить фотографию<!--</s>--></a> ]<?endif?></td></tr></table>
+<hr/>
+<!-- <body> -->
+ <hr />
+ <div id="u-photos">
+ <div class="uphoto-entry">
+ <h2 class="photo-etitle">$PHOTO_NAME$</h2>
+ <div class="photo-edescr">
+ $PHOTO_DESCR$
+ </div>
+ <div class="u-center">
+ <div class="photo-block">
+ <div class="ph-wrap">
+ <span class="photo-expand">
+ $PHOTO$
+ <?if($FULL_PHOTO_DIRECT_URL$)?><a class="dd-tip ulightbox" href="$FULL_PHOTO_DIRECT_URL$" target="_blank"><i class="expand-ico"></i><!--<s10014>-->В реальном размере<!--</s>--> <b>$PHOTO_SIZE$</b> / $PHOTO_WEIGHT$Kb</a><?endif?>
+ </span>
+ </div>
+ <div class="photo-edetails ph-js-details">
+ <span class="phd-views">$REVIEWS$</span>
+ <span class="phd-comments">$COMMENTS_NUM$</span>
+ <?if($RATING$)?>
+ <span class="phd-rating">
+ <span id="entRating$ID$">$RATING$</span>
+ </span>
+ <span class="phd-dorating"><?$RSTARS$('14','http://s700.uweb.ru/img/photopage/rstars.png','1','float')?></span>
+ <?endif?>
+ </div>
+ <hr class="photo-hr" />
+ <div class="photo-edetails2">
+<!--<s10015>-->Добавлено<!--</s>--> $ADD_DATE$ <a class="phd-author" href="$PROFILE_URL$">$USER$</a>
+ </div>
+ </div>
+ <?if($MODER_PANEL$)?><span style="display: block;vertical-align: middle;margin: 10px 0;white-space: nowrap;">$MODER_PANEL$</span><?endif?>
+ </div>
+ </div>
+ <div class="photo-slider u-center">
+ <?if($OTHER_PHOTOS$)?>$NEAR_PHOTOS$<?endif?>
+ </div> 
+ </div>
+ <hr />
+ 
+ <?if($COM_IS_ACTIVE$)?>
+ <?if($COM_CAN_READ$)?>
+ <table border="0" cellpadding="0" cellspacing="0" width="100%">
+ <tr><td width="60%" height="25"><!--<s5183>-->Всего комментариев<!--</s>-->: <b>$COM_NUM_ENTRIES$</b></td><td align="right" height="25">$COM_PAGE_SELECTOR$</td></tr>
+ <tr><td colspan="2">$COM_BODY$</td></tr>
+ <tr><td colspan="2" align="center">$COM_PAGE_SELECTOR1$</td></tr>
+ <tr><td colspan="2" height="10"></td></tr>
+ </table>
+ <?endif?>
+ 
+ <?if($COM_CAN_ADD$)?>
+ $COM_ADD_FORM$
+ <?else?>
+ <?if($USER_LOGGED_IN$)?><?else?><div align="center" class="commReg"><!--<s5237>-->Добавлять комментарии могут только зарегистрированные пользователи.<!--</s>--><br />[ <a href="$REGISTER_LINK$"><!--<s3089>-->Регистрация<!--</s>--></a> | <a href="$LOGIN_LINK$"><!--<s3087>-->Вход<!--</s>--></a> ]</div><?endif?>
+ <?endif?>
+ <?endif?><!-- </body> -->
+			</div>
+		</div>
+	</section>
+$GLOBAL_BFOOTER$
+</body>
+</html>

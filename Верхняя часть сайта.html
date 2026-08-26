@@ -1,0 +1,174 @@
+<div class="menu_fon" ></div>	 
+		
+<div class="container">
+	<!--
+	<?if($URI_ID$='page1')?>
+	<header class="cd-auto-hide-header nobg">
+	<?else?>
+	<header class="cd-auto-hide-header bg">
+	<?endif?-->
+	<header class="cd-auto-hide-header">
+		<div class="header">
+			<div class="contentcenter">
+				<!-- Для валидатора vcard -->
+				<div class="vcard">
+					<!-- Логотип -->
+					<div class="logo fadeInLeft">
+						<a href="$HOME_PAGE_LINK$"><img src="$HOME_PAGE_LINK$img/logo.png" class="photo" alt="$SITE_NAME$" title="Главная | $SITE_NAME$" /></a>
+					</div>
+					<!-- Копирайт -->
+					<div class="copyright-info">
+						<a href="$HOME_PAGE_LINK$" class="url"><span class="category">Категория</span> <span class="fn org">$SITE_NAME$</span></a>
+					</div>
+					<!-- E-mail -->
+					<div class="mailto fadeInDown">
+						<div class="vcardcenter">
+							<a href="mailto:igrushkiumamy@yandex.ru" target="_blank" class="email"><i class="far fa-envelope"></i>igrushkiumamy@yandex.ru</a>
+						</div>
+					</div>
+					<!-- Адрес -->
+					<div class="header-adr fadeInDown">
+						<div class="vcardcenter">
+							<a href="#">
+								<i class="fas fa-map-marker-alt"></i>
+								<div class="adr">
+									<b class="country-name" style="display: none;">Российская Федерация</b>
+									<b class="region" style="display: none;">Республика Татарстан</b>
+									<b class="locality">г. Набережные Челны,</b>
+									<b class="street-address">ул. Название улицы, дом 1</b>
+								</div>
+								<div style="display: none;" class="pricerange">RUB</div>
+							</a>
+							<div style="display: none;">Мы работаем <span class="workhours">Пн-пт с 8:00 до 17:00, суббота-воскресенье - выходной.</span></div>
+						</div>
+					</div>
+					<!-- Телефон -->
+					<div class="callto fadeInDown">
+						<div class="vcardcenter">
+							<a href="tel:89053736990"><i class="fas fa-phone fa-flip-horizontal"></i></a>
+							<a href="tel:89053736990"><abbr class="tel" title="+7 (905) 373-69-90">+7 (905) 373-69-90</abbr></a>
+							<span class="toogle"><a href="javascript:void(0);">Заказать звонок</a></span>
+						</div>
+					</div>
+					<!-- Корзина -->
+					<div class="header-link fadeInRight">
+						<div class="vcardcenter">
+							<?if($BASKET$)?>
+								<div id="touch-cart" class="mobile-cart">	
+									$BASKET$
+								</div>
+							<?endif?>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- Кнопка меню меню -->
+		<a href="#" id="touch-menu" class="mobile-menu nav-trigger">	
+			<span>
+				<em aria-hidden="true"></em>
+			</span>
+		</a>
+
+		<nav class="header-menu fadeInUp">
+			<div class="contentcenter">
+				$NMENU_1$
+
+				<div class="mobilesidebar">
+					<h2>Каталог товаров</h2>
+					<br/>
+					<div id="shop_left_menu">
+						<?$SHOP_HMENU$('ul')?>
+					</div>
+				</div>
+
+				<div class="searchform-top">
+					<form action="/shop/search" method="post" onsubmit="this.sfSbm.disabled=true">								
+						<input class="queryField" type="text" size="20" maxlength="60" name="query" value="Что будем искать?" onfocus="if(this.value=='Что будем искать?')this.value=''" onblur="if(this.value=='')this.value='Что будем искать?'" />	
+						<input class="schBtn" type="submit" value=" " name="sfSbm" class="searchSbmFl" /><label for="before">&nbsp;</label>
+					</form>
+				</div>
+			</div>
+
+			<div class="mobileblock">
+				<a href="tel:89053736990"><i class="fas fa-phone fa-flip-horizontal"></i></a>
+				<a href="tel:89053736990">+7 (905) 373-69-90</a><br/>
+				<br/><br/>
+
+				<a href="mailto:igrushkiumamy@yandex.ru" target="_blank" class="email"><i class="far fa-envelope"></i>igrushkiumamy@yandex.ru</a>
+
+				<div class="toogle">
+					<a class="button tyellow" href="javascript:void(0);"><span>Заказать звонок</span></a>
+				</div>
+
+			</div>
+		</nav>
+
+		<div class="menu_fon"></div>			
+	</header><!--</header>-->
+
+	<?if($URI_ID$='page1' || $URI_ID$='shMain')?>
+	<section class="headerslaider">
+		<div class="iosSliderDemo">
+			<div class="fluidHeight">
+				<div class="sliderContainer">
+					<div class="iosSlider">
+						<div class="slider">
+							
+							<div class="item">
+								<div class="inner">
+									<img src="$HOME_PAGE_LINK$img/slider/1.jpg" alt="" title="" />
+									<div class="sliderdesk">
+										<h2 class="text1">Игрушки у Мамы - самые любимые игрушки для любимых деток</h2>
+										<div class="text2">Краткое описание слайда.</div>
+										<div class="text3">
+											<div class="toogle"><a class="button tyellow" href="javascript:void(0);"><span>Заказать</span></a></div>
+											<div><a class="button desc" href="#"><span>Смотреть каталог</span></a></div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="item">
+								<div class="inner">
+									<img src="$HOME_PAGE_LINK$img/slider/1.jpg" alt="" title="" />
+									<div class="sliderdesk">
+										<h2 class="text1">Игрушки у Мамы - самые любимые игрушки для любимых деток</h2>
+										<div class="text2">Краткое описание слайда.</div>
+										<div class="text3">
+											<div class="toogle"><a class="button tyellow" href="javascript:void(0);"><span>Заказать</span></a></div>
+											<div><a class="button desc" href="#"><span>Смотреть каталог</span></a></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<div class="headerslaiderbg"></div>
+					</div>
+					<div class="slideSelectors">
+						<div class="item selected"></div>
+						<div class="item"></div>
+					</div>
+					<div class="slideSelectors slideSelectorstop">
+						<div class="prev"></div>
+						<div class="next"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<?else?>
+	<section id="nogl">
+		<section class="headerslaider">
+			<div class="iosSliderDemo"></div>
+		</section>
+	</section>
+	<?endif?>
+	
+	
+	<main role="main">

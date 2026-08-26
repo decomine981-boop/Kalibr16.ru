@@ -1,0 +1,67 @@
+<?if($BODY$)?><ul>$BODY$</ul><?endif?>
+<?if($NUM_ENTRIES$)?>
+Товаров в корзине: <b style="font-size: 13px;">$NUM_ENTRIES$</b> шт.
+ <?if($ORDER_DISCOUNT$)?>
+<?if($DISCOUNT_INFO$)?>
+<div class="disc-info">$DISCOUNT_INFO$</div>
+<?endif?>
+<?endif?>
+<br/>
+ <a class="basketclear" href="javascript://" rel="nofollow" onclick="return clearBasket();">Очистить</a> |
+ <a class="basketorder" href="/shop/checkout">Оформить заказ</a>
+<?else?>
+ <div class="empty">Ваша корзина пуста<br/></div>
+<?endif?>
+
+<style>
+#shop-basket ul { margin:0; padding:0; text-align:left; list-style:none }
+#shop-basket li { margin:0 0 5px 0; padding-left:35px }
+#shop-basket .sb-name { margin-right:18px; }
+#shop-basket .sb-cost { margin-right:18px; color: gray; }
+#shop-basket .sb-func { float:right; cursor:pointer; width:16px; height:16px; margin:0;}
+#shop-basket a.remove { background:url('/.s/img/sh/del.png') no-repeat 3px 0; }
+#shop-basket a.remove:hover { background:url('/.s/img/sh/del.png') no-repeat 3px -16px; }
+#shop-basket .empty { text-align:center; }
+#shop-basket .total {font-weight: bold;}
+#shop-basket .total, #shop-basket .disc { text-align:right; }
+#shop-basket .disc-info { font-style: italic; }
+</style>
+
+<script language="Javascript"><!--
+var lock_buttons = 0;
+
+function clearBasket(){
+ if(lock_buttons) return false; else lock_buttons = 1;
+ var el = $('#shop-basket');
+ if(el.length){ var g=document.createElement("div"); $(g).addClass('myWinGrid').attr("id",'shop-basket-fade').css({"left":"0","top":"0","position":"absolute","border":"#CCCCCC 1px solid","width":$(el).width()+'px',"height":$(el).height()+'px',"z-index":5}).hide().bind('mousedown',function(e){e.stopPropagation();e.preventDefault();_uWnd.globalmousedown();}).html('<div class="myWinLoad" style="margin:5px;"></div>'); $(el).append(g); $(g).show(); }
+ _uPostForm('',{type:'POST',url:'/shop/basket',data:{'mode':'clear'}});
+ return false;
+}
+
+function removeBasket(id){
+ if(lock_buttons) return false; else lock_buttons = 1;
+ $('#basket-item-'+id+' .sb-func').removeClass('remove').addClass('myWinLoadS').attr('title','');
+ _uPostForm('',{type:'POST',url:'/shop/basket',data:{'mode':'del', 'id':id}});
+ return false;
+}
+
+function add2Basket(id,pref){
+ if(lock_buttons) return false; else lock_buttons = 1;
+ var opt = new Array();
+ $('#b'+pref+'-'+id+'-basket').attr('disabled','disabled');
+ $('#'+pref+'-'+id+'-basket').removeClass('done').removeClass('err').removeClass('add').addClass('wait').attr('title','');
+ $('#'+pref+'-'+id+'-options-selectors').find('input:checked, select').each(function(){ opt.push(this.id.split('-')[3]+(parseInt(this.value) ? '-'+this.value :''));});
+ _uPostForm('',{type:'POST',url:'/shop/basket',data:{'mode':'add', 'id':id, 'pref':pref, 'opt':opt.join(':'), 'cnt':$('#q'+pref+'-'+id+'-basket').attr('value')}});
+ return false;
+}
+
+function buyNow(id,pref){
+ if(lock_buttons) return false; else lock_buttons = 1;
+ var opt = new Array();
+ $('#b'+pref+'-'+id+'-buynow').attr('disabled','disabled');
+ $('#'+pref+'-'+id+'-buynow').removeClass('done').removeClass('err').removeClass('now').addClass('wait').attr('title','');
+ $('#'+pref+'-'+id+'-options').find('input:checked, select').each(function(){ opt.push(this.id.split('-')[3]+(parseInt(this.value) ? '-'+this.value :''));});
+ _uPostForm('',{type:'POST',url:'/shop/basket',data:{'mode':'add', 'id':id, 'pref':pref, 'opt':opt.join(':'), 'cnt':$('#q'+pref+'-'+id+'-basket').attr('value'), 'now':1}});
+ return false;
+}
+//--></script>

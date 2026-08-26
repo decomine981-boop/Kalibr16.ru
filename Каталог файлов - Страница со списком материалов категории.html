@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>$CAT_NAME$ <?if($SECTION_NAME$)?>- $SECTION_NAME$<?endif?> - $MODULE_NAME$ | $SITE_NAME$</title>
+<meta name="keywords" content="$CAT_NAME$<?if($SECTION_NAME$)?>, $SECTION_NAME$<?endif?>, $MODULE_NAME$, $SITE_NAME$" />
+<meta name="description" content="$CAT_NAME$ <?if($SECTION_NAME$)?>- $SECTION_NAME$<?endif?> - $MODULE_NAME$ | $SITE_NAME$" />
+
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/default.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/style.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/animate.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/mobile.css" />
+
+<link rel="icon" type="image/x-icon" href="$HOME_PAGE_LINK$favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="$HOME_PAGE_LINK$favicon.ico" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous" />
+<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+$GLOBAL_AHEADER$
+		<section id="contentbody">
+			<div class="contentcenter">
+				$GLOBAL_CLEFTER$
+				<div class="content">
+					<!-- <body> -->
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="font-size: 12px;">
+					<tr>
+					<td width="80%"><a href="$HOME_PAGE_LINK$">Главная</a> &raquo; <a href="$MODULE_URL$">$MODULE_NAME$</a> <?if($SECTION_NAME$)?>&raquo; <a href="$SECTION_URL$">$SECTION_NAME$</a> <?endif?>&raquo; $CAT_NAME$</td>
+					<td align="right" style="white-space: nowrap;"><?if($ADD_ENTRY_LINK$)?>[ <a href="$ADD_ENTRY_LINK$"><!--<s5186>-->Добавить файл<!--</s>--></a> ]<?endif?></td>
+					</tr>
+					</table>
+					<hr/>
+					<h1>$CAT_NAME$</h1>
+					<br/>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr>
+					<td width="60%"><!--<s5219>-->В категории файлов<!--</s>-->: <b>$NUM_ENTRIES$</b><?if($NUM_SHOWN$)?><br /><!--<s5220>-->Показано файлов<!--</s>-->: <b>$NUM_SHOWN$</b><?endif?></td>
+					<td align="right"><?if($PAGE_SELECTOR$)?><!--<s3015>-->Страницы<!--</s>-->: $PAGE_SELECTOR$<?endif?></td>
+					</tr>
+					</table>
+					<hr />
+					<?if($SORTING_MENU$)?><!--<s5221>-->Сортировать по<!--</s>-->: $SORTING_MENU$<hr /><?endif?>
+					$BODY$
+					<?if($PAGE_SELECTOR$)?><div style="text-align:center;">$PAGE_SELECTOR$</div><?endif?>
+					<!-- </body> -->
+				</div><!-- end .content -->
+			</div><!-- end .contentcenter -->
+		</section>
+$GLOBAL_BFOOTER$
+</body>
+</html>

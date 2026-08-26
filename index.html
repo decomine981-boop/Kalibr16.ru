@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title><?if($SEO_TITLE$)?>$SEO_TITLE$<?else?><?if($URI_ID$='page1')?><?else?>$MODULE_NAME$ | <?endif?>$SITE_NAME$<?endif?></title>
+<meta name="keywords" content="<?if($SEO_KEYWORDS$)?>$SEO_KEYWORDS$<?else?>$MODULE_NAME$, $SITE_NAME$<?endif?>" />
+<meta name="description" content="<?if($SEO_DESCRIPTION$)?>$SEO_DESCRIPTION$<?else?>$MODULE_NAME$ | $SITE_NAME$<?endif?>" />
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="$SITE_NAME$"/>
+<meta property="og:title" content="<?if($SEO_TITLE$)?>$SEO_TITLE$<?else?>$MODULE_NAME$ | $SITE_NAME$<?endif?>"/>
+<meta property="og:description" content="<?if($SEO_DESCRIPTION$)?>$SEO_DESCRIPTION$<?else?>$MODULE_NAME$ | $SITE_NAME$<?endif?>"/>
+<meta property="og:url" content="$HOME_PAGE_LINK$$REQUEST_URI$"/>
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="$HOME_PAGE_LINK$img/promo.png">
+
+<link rel="stylesheet" href="css/default.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/animate.css" />
+
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" crossorigin="anonymous" />
+<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- При натяжке удалить -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<!-- END. При натяжке удалить -->
+</head>
+
+
+<body>
+<!-- При натяжке убрать комментарий
+$GLOBAL_AHEADER$
+-->
+<div class="menu_fon" ></div>
+
+<?if($URI_ID$='page1' || $URI_ID$='shMain')?>
+<div class="container">
+<?else?>
+<!-- При натяжке убрать комментарий
+<div class="container noglstr">
+-->
+<?endif?>
+	<header class="cd-auto-hide-header">
+		<div class="header">
+			<div class="contentcenter">
+				<!-- Для валидатора vcard -->
+				<div class="vcard">
+					<!-- Логотип -->
+					<div class="logo fadeInLeft">
+						<a href="$HOME_PAGE_LINK$"><img src="img/logo.png" class="photo" alt="$SITE_NAME$" title="Главная | $SITE_NAME$" /></a>
+					</div>
+					<!-- Копирайт -->
+					<div class="copyright-info">
+						<a class="url" href="$HOME_PAGE_LINK$"><span class="category">Категория</span> <span class="fn org">$SITE_NAME$</span></a>
+					</div>
+					<!-- E-mail -->
+					<div class="mailto fadeInDown">
+						<a href="mailto:info@name.ru" target="_blank" class="email"><i class="far fa-envelope"></i>info@name.ru</a>
+					</div>
+					<!-- Адрес -->
+					<div class="adr fadeInDown">
+						<a href="#">
+							<i class="fas fa-envelope"></i>
+							
+							<b class="locality">yandex@gmail.com</b>
+
+						</a>
+						<div style="display: none;">Мы работаем <span class="workhours">Пн-пт с 8:00 до 17:00, суббота-воскресенье - выходной.</span></div>
+					</div>
+					<!-- Телефон -->
+					<div class="callto fadeInDown">
+						<a href="tel:89600719901">
+							<i class="fas fa-phone fa-flip-horizontal"></i>
+							<abbr class="tel" title="+7 (960) 071-99-01">+7 (960) 071-99-01</abbr>
+						</a>
+					</div>
+					<li><a class="button green" href="#">Узнать подробнее</a></li>
+
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<!-- Кнопка меню меню -->
+		<a href="#" id="touch-menu" class="mobile-menu nav-trigger">
+			<span>
+				<em aria-hidden="true"></em>
+			</span>
+		</a>
+
+		<nav class="header-menu fadeInUp">
+			<div class="contentcenter">
+				<!-- При натяжке удалить -->
+				<div id="uNMenuDiv2" class="uMenuV">
+					<ul class="uMenuRoot">
+						<li><a class="uMenuItemA" href="#"><span>Главная</span></a></li>
+						<li><a href="#about"><span>СБКТС</span></a></li>
+						<li><a href="#preim-ts"><span>Переоборудование ТС</span></a></li>
+						<li><a href="#feedback1"><span>Стоимость работ</span></a></li>
+						<li><a href="#"><span>Контакты</span></a></li>
+					</ul>
+				</div>
+				<!-- END. При натяжке удалить -->
+				<!-- При натяжке убрать комментарий
+				$NMENU_1$
+				-->
+
+
+				<div class="mobilesidebar">
+					<h2>Каталог товаров</h2>
+					<br/>
+					<div id="shop_left_menu">
+						<?$SHOP_HMENU$('ul')?>
+					</div>
+					<!-- При натяжке удалить -->
+					<div id="shop_left_menu">
+						<ul id="shop-hmenu" class="hmenu-onhover">
+							<li class="hmenu-item">
+								<a class="hmenu-link" href="#about"><span>СБКТС</span></a>
+							</li>
+
+							<li class="hmenu-item">
+								<a class="hmenu-link collapsed collapsible" href="#preim-ts"><span>Переоборудование ТС</span></a>
+								<div class="hmenu-cont" style="display: none;">
+									<ol class="hmenu-cont-block with-clear">
+										<li class="hmenu-subc-ol hmenu-subc level2">
+											<div><a href="#feedback1">Стоимость работ</a></div>
+										</li>
+										<li class="hmenu-item">
+											<a class="hmenu-link hmenu-subc level2 sample-menuA" href="#"><span>Контакты</span></a>
+										</li>
+									</ol>
+								</div>
+							</li>
+
+							<li class="hmenu-item">
+								<a class="hmenu-link sample-menuA" href="/shop/digital-goods"><span>Тестовая категория</span></a>
+							</li>
+						</ul>
+					</div>
+					<!-- END. При натяжке удалить -->
+				</div>
+
+
+			<div class="mobileblock">
+				<div class="mb-contacts">
+					<a href="tel:89600719901"><i class="fas fa-phone fa-flip-horizontal"></i>+7 (960) 071 99 01</a>
+				</div>
+				<div class="mb-email">
+					<a href="mailto:info@name.ru" target="_blank" class="email"><i class="far fa-envelope"></i>info@name.ru</a>
+				</div>
+
+
+				<div class="social">
+					Мы в соцсетях:<br/>
+					<a href="#" target="_blank"><i class="fab fa-vk"></i></a>
+					<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+					<a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+					<a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+					<a href="#" target="_blank"><i class="fas fa-at"></i></a>
+				</div>
+				<!--<a href="#" target="_blank" class="loguserm"><i class="far fa-user"></i>Личный кабинет</a>-->
+
+				<div class="toogle">
+					<a class="button tyellow" href="javascript:void(0);"><span>Записаться на экспертизу</span></a>
+				</div>
+
+			</div>
+		</nav>
+
+		<div class="menu_fon"></div>
+	</header><!--</header>-->
+
+	<?if($URI_ID$='page1' || $URI_ID$='shMain')?>
+	<section class="headerslaider">
+		<div class="iosSliderDemo">
+			<div class="fluidHeight">
+				<div class="sliderContainer">
+					<div class="iosSlider">
+						<div class="slider">
+
+							<div class="item">
+								<div class="inner">
+									<img src="img/банер/1.jpg" alt="" title="" />
+									<div class="sliderdesk">
+										<h2 class="text1"><span>ЭКСПЕРТИЗА</span> АВТОМОБИЛЕЙ</h2>
+										<div class="text2">Выдача документов на транспортные средства</div>
+										<div class="text3">
+											<div class="toogle"><a class="button tyellow" href="javascript:void(0);"><span>Записаться на экспертизу</span></a></div>
+											<div><a class="button desc" href="#"><span></span></a></div>
+											<br>
+										</div>
+									</div>
+								</div>
+							</div>
+						<!--
+							<div class="item">
+								<div class="inner">
+									<img src="img/slider/2.jpg" alt="" title="" />
+									<div class="sliderdesk">
+										<h2 class="text1">Название заголовка</h2>
+										<div class="text2">Краткое описание слайда в одно предложение или описание акции.</div>
+										<div class="text3">
+											<div class="toogle"><a class="button tyellow" href="javascript:void(0);"><span>Заказать</span></a></div>
+											<div><a class="button desc" href="#"><span>Узнать подробнее</span></a></div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="item">
+								<div class="inner">
+									<img src="img/slider/3.jpg" alt="" title="" />
+									<div class="sliderdesk">
+										<h2 class="text1">Название заголовка</h2>
+										<div class="text2">Краткое описание слайда в одно предложение или описание акции.</div>
+										<div class="text3">
+											<div class="toogle"><a class="button tyellow" href="javascript:void(0);"><span>Заказать</span></a></div>
+											<div><a class="button desc" href="#"><span>Узнать подробнее</span></a></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						-->
+						</div>
+						<div class="headerslaiderbg"></div>
+					</div>
+					<div class="slideSelectors"> <!--При изменении кол-ва слайдов убрать или добавить блок item-->
+						<div class="item selected"></div>
+						<div class="item"></div>
+						<div class="item"></div>
+					</div>
+					<div class="slideSelectors slideSelectorstop">
+						<div class="prev"></div>
+						<div class="next"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<?else?>
+	<!-- При натяжке убрать комментарий
+	<section id="nogl">
+		<section class="headerslaider">
+			<div class="iosSliderDemo"></div>
+		</section>
+	</section>
+	-->
+	<?endif?>
+	
+	
+	<main role="main">
+	<?if($URI_ID$='page1')?>
+
+		<section id="news">
+			<div class="contentcenter">
+				<h2>Наши услуги</h2>
+				<div class="col4 news1">
+					<div>
+						<a href="#">
+							<div class="data"></div>
+							<h3>Выдача протаколов идентификации</h3>
+						</a>
+						<p>Протоколы идентификации траспортного средства и сертификационных испытаний в отношении отдельных требований ТР ТС 018/2011</p>
+						<div class="productimg">
+								<img src="img/Наши услуги/1.svg" alt="" title="">
+						</div>
+						<a class="button descarrow" href="#"></a>
+					</div>
+					<div>
+						<a href="#">
+							<div class="data"></div>
+							<h3>Проверка выполнения требований</h3>
+						</a>
+						<p>Выполнение требований к единичным транспортным средствам перед их выпуском в обращение</p>
+						<div class="productimg">
+								<img src="img/Наши услуги/2.svg" alt="" title="">
+						</div>
+						<a class="button descarrow" href="#"></a>
+					</div>
+					<div>
+						<a href="#">
+							<div class="data"></div>
+							<h3>Проверка выполнения требований</h3>
+						</a>
+						<p>Выполнение требований к эксплуатируемым транспортным средствам в случае внесения изменения в их конструкцию</p>
+						<div class="productimg">
+								<img src="img/Наши услуги/3.svg" alt="" title="">
+							</div>
+						<a class="button descarrow" href="#"></a>
+					</div>
+					<div>
+						<a href="#">
+							<div class="data"></div>
+							<h3>Выдача СБКТС</h3>
+						</a>
+						<p>Свидетельство о безопасности конструкции транспортного средства</p>
+						<div class="productimg">
+								<img src="img/Наши услуги/4.svg" alt="" title="">
+						</div>
+						<a class="button descarrow" href="#"></a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+				
+		<section id="about">
+			<div class="contentcenter">
+				<div class="col2">
+					<div>
+						<h2>Зачем нужно <b>СБКТС</b>?</h2>
+						<p>СБКТС –  это документ, подтверждающий соответствие транспортного средства, ранее находившегося в эксплуатации и ввозимого на территорию Евразийского Экономического союза (ЕАЭС), изготовленного на территории ЕАЭС, как результат индивидуального технического творчества, требованиям безопасности технического регламента «О безопасности колёсных транспортных средств» (ТР ТС 018/2011).</p>
+					</div>
+					<div>
+						<img class="imgright" src="img/about/1.png" alt="" title="" />
+					</div>	
+				</div>
+			</div>
+		</section>
+		
+
+
+		<section id="preim-rf">
+			<div class="contentcenter">
+				<h2>При ввозе на территорию РФ <b>свидетельство</b> в <br> обязательном порядке <b>оформляется для ТС</b>:</h2>
+				<br/>
+				<ul class="col3">
+					<li>
+						<a href="#"><img src="img/cвидетельство/1.png" alt="" title=""></a>
+						<p>Ввозимых из стран, не являющимися членами ЕАЭС</p>
+					</li>
+					<li>
+						<a href="#"><img src="img/cвидетельство/2.png" alt="" title=""></a>
+						<p>Изготовленных самостоятельно, как результат индивидуального технического творчества</p>
+					</li>
+					<li>
+						<a href="#"><img src="img/cвидетельство/3.png" alt="" title=""></a>
+						<p>Заводской сборки, в конструкцию которых были внесены изменения перед их выпуском в обращение</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+
+
+		<section id="preim-rf">
+			<div class="contentcenter">
+				<div class="col3 preim4">
+					<div>
+						<h3>Наличие СБКТС<br><span>подтверждает:</span></h3>
+					</div>
+					<div>
+						<img src="img/СБКТС/01.png">
+					</div>
+					<div class="left">
+						<p>
+							<b>Соответствие требованиям технического регламента</b><br>
+							<br>
+							Конструкция автомобиля или другого ТС, прошедшего проверку, в полной мере соответствует требованиям тех. регламента 018/2011, устанавливающего стандарты безопасности устройства ТС, эксплуатируемых в странах Таможенного Союза
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+		<section id="preim-lab">
+			<div class="contentcenter wow fadeInUp">
+				<h2>Наша испытательная лаборатория <b>обеспечит вас</b>:</h2>
+				<br/>
+				<div class="col4">
+					<div>
+						<a href="#">
+							<img src="img/лаболатория/1.png" alt="Надёжность" title="Надёжность">
+							<h3>Надёжность</h3>
+						</a>
+						<p>Все отчёты готовятся с учетом судобной практики</p>
+					</div>
+					<div>
+						<a href="#">
+							<img src="img/лаболатория/2.png" alt="Юристом" title="Юристом">
+							<h3>Юристом</h3>
+						</a>
+						<p>Консультации и помощь юриста</p>
+					</div>
+					<div>
+						<a href="#">
+							<img src="img/лаболатория/3.png" alt="Скоростью" title="Скоростью">
+							<h3>Скоростью</h3>
+						</a>
+						<p>Все отчёты готовятся с учетом судобной практики</p>
+					</div>
+					<div>
+						<a href="#">
+							<img src="img/лаболатория/4.png" alt="Результатом" title="Результатом">
+							<h3>Результатом</h3>
+						</a>
+						<p>Получение желаемого документа</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section id="preim-ts">
+			<div class="contentcenter wow fadeInUp">
+				<h2></h2>
+				<br>
+				<div class="col2">
+					<div>
+						<h3><b>Переоборудование</b> ТС</h3>
+						<p>Замена двигателя, смена компоновки салона, установка дополнительных органов управления и многие другие виды работы могут быть выполнены самостоятельно либо с помощью специализированных сервисов. Но далеко не все знают о том, что необходимо регистрировать, а что нет. Такие изменения конструкции легкового ТС возможны, но только если зарегистрировать в ГИБДД.</p>
+					</div>
+					<div>
+						<h4>Сопровождаем вас на всех этапах переоборудования</h4>
+					</div>
+					<div>
+						<h4>Юридически оформляем изменения</h4>
+					</div>
+					<div>
+						<h4>Разрабатываем всю документацию для гарантированной регистрации легковых ТС в ГИБДД</h4>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section id="preim-part">
+			<div class="contentcenter wow fadeInUp">
+				<h2>Наши <b>партнёры</b></h2>
+				<br>
+				<div class="col4">
+					<div>
+						<a href=""><img src="img/nophoto.jpg" alt="" title=""></a>
+					</div>
+					<div>
+						<a href=""><img src="img/nophoto.jpg" alt="" title=""></a>
+					</div>
+					<div>
+						<a href=""><img src="img/nophoto.jpg" alt="" title=""></a>
+					</div>
+					<div>
+						<a href=""><img src="img/nophoto.jpg" alt="" title=""></a>
+					</div>
+					<div>
+						<a href=""><img src="img/nophoto.jpg" alt="" title=""></a>
+					</div>
+					<div>
+						<a href=""><img src="img/nophoto.jpg" alt="" title=""></a>
+					</div>
+					<div>
+						<a href=""><img src="img/nophoto.jpg" alt="" title=""></a>
+					</div>
+					<div>
+						<a href=""><img src="img/nophoto.jpg" alt="" title=""></a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section id="feedback1">
+			<div class="contentcenter">			
+				<br/>
+				<div class="feedbackbox">
+					<div class="col2">
+						<div>
+							<h3>Стоимость работ</h3>
+							<p>Получение СБКТС <b>от 7 950 ₽</b> </p>
+							<br>
+							<br>
+							<p>Переоборудование ТС <b>от 9 209 ₽</b> </p>
+						</div>
+						<div>
+							<form method="post" name="mform" style="margin:0">
+							<h2>Оставьте контактные данные, мы свяжемся и обсудим все вопросы</h2>
+							<table class="col2" border="0" cellspacing="1" cellpadding="2">
+								<tbody class="col2">
+								<tr>
+									<td><input type="text" name="f3" size="30" maxlength="70" aria-invalid="false" placeholder="Ваше имя"> </td>
+								</tr>
+								<tr>
+									<td class="center"><input id="phone" type="tel" name="f4" size="30" maxlength="70" placeholder="Номер телефона"> </td>
+								</tr>
+								<tr style="display: none;">
+									<td><input type="text" name="f2" size="30" maxlength="70" value="sitename.ru - Заказать звонок"> </td>
+								</tr>
+								<tr>
+									<td>
+										<input class="button yeelow" type="submit" value="Заказать звонок">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<small>Нажимая кнопку «Заказать звонок», вы подтверждаете свое согласие на обработку персональных данных и принимаете <span class="toogleprivacy"><a href="javascript:void(0);">пользовательское соглашение</a></span>.</small>
+									</td>
+								</tr>
+							</tbody></table>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+</main>
+
+
+		
+
+
+
+<footer>
+	<div class="footer-top">
+		<div class="contentcenter">
+			<ul class="col4">
+				<li class="wow fadeInRight">
+					<h3>Контакты</h3>
+					<ul class="footer-top-cont">
+						<li class="footer-callto">
+							<a href="tel:89625552255"><i class="fas fa-phone fa-flip-horizontal"></i></a>
+							<a href="tel:89625552255">+7 (962) 555-22-55</a><br/>
+							<a href="tel:89276787111">+7 (927) 678-71-11</a>
+						</li>
+						<li><a href="mailto:info@name.ru" target="_blank"><i class="far fa-envelope"></i>info@name.ru</a></li>
+						<li><i class="fas fa-map-marker-alt"></i>423830, Россия, Республика Татарстан, г. Набережные Челны, Казанский проспект, д.226, строение 2</li>
+					</ul>
+				</li>
+				<li class="wow fadeInRight" data-wow-delay="0.2s">
+					<h3>Компания</h3>
+					<ul class="footer-top-menu">
+						<li><a href="$HOME_PAGE_LINK$">Главная</a></li>
+						<li><a href="#about">СБКТС</a></li>
+						<li><a href="#preim-ts">Переоборудование ТС</a></li>
+						<li><a href="#feedback1">Стоимость работ</a></li>
+						<li><a href="#footer-top">Контакты</a></li>
+					</ul>
+				</li>
+				<li class="wow fadeInRight" data-wow-delay="0.4s">
+
+				</li>
+				<li class="wow fadeInRight" data-wow-delay="0.6s">
+					<h3>Мы в соцсетях</h3><!-- вместо заголовка ставим 2 <br/> если нужено убрать заголовок -->
+					<div class="social">
+						<a href="#" target="_blank"><i class="fab fa-vk wow fadeInRight" data-wow-delay="0.8s"></i></a>
+						<a href="#" target="_blank"><i class="fab fa-instagram wow fadeInRight" data-wow-delay="1.0s"></i></a>
+						<a href="#" target="_blank"><i class="fab fa-facebook-f wow fadeInRight" data-wow-delay="1.2s"></i></a>
+						<a href="#" target="_blank"><i class="fab fa-youtube wow fadeInRight" data-wow-delay="1.4s"></i></a>
+						<a href="#" target="_blank"><i class="fab fa-twitter wow fadeInRight" data-wow-delay="1.6s"></i></a>
+						<a href="#" target="_blank"><i class="fas fa-at wow fadeInRight" data-wow-delay="1.8s"></i></a>
+					</div>
+					<br/>
+					<h3>Мы принимаем</h3>
+					<div class="social">
+						<img src="img/pay/mastercard.png" alt="mastercard" title="mastercard" class="wow fadeInRight" data-wow-delay="0.8s" />
+						<img src="img/pay/maestro.png" alt="maestro" title="maestro" class="wow fadeInRight" data-wow-delay="1.0s" />
+						<img src="img/pay/visa.png" alt="visa" title="visa" class="wow fadeInRight" data-wow-delay="1.2s" />
+						<img src="img/pay/paypal.png" alt="paypal" title="paypal" class="wow fadeInRight" data-wow-delay="1.4s" />
+						<img src="img/pay/mir.png" alt="мир" title="мир" class="wow fadeInRight" data-wow-delay="1.6s" />
+					</div>
+					<!--
+					<div class="social">
+						<i class="fab fa-cc-mastercard wow fadeInRight" data-wow-delay="0.8s"></i>
+						<i class="fab fa-cc-visa wow fadeInRight" data-wow-delay="1.0s"></i>
+						<i class="fab fa-cc-paypal wow fadeInRight" data-wow-delay="1.2s"></i>
+					</div>
+					<br/>
+					<a href="#">Доставка и оплата</a>
+					-->
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<div class="contentcenter">
+			<div class="col2">
+				<div class="copyright-info wow fadeInLeft">
+					<a href="$HOME_PAGE_LINK$" class="url"><span class="fn org">$SITE_NAME$</span></a> © 2007-$YEAR$ г.<br/>Все права защищены. <?if($LOGIN_FORM$)?><span class="tooglelog"><a href="javascript:void(0);" class="enter">Вход</a></span><?endif?> <?if($USER_LOGGED_IN$)?><a href="$LOGOUT_LINK$">Выход</a><?endif?><br/>
+					<br/>
+					<span class="toogleprivacy"><a href="javascript:void(0);">Пользовательское соглашение</a></span>
+				</div>
+				<div class="wow fadeInRight" id="banner">
+					<!-- Уважаемые коллеги, удаление копирайта WEB-СТУДИИ PixelStyle ЗАПРЕЩЕНО!!! При не согласованном удалении, сайт блокируется согласно разделу 5 указанного в договоре. -->
+					<a href="https://PixelStyle.ru/" title="Создание сайтов в Челнах www.PixelStyle.ru" target="_blank"><div class="copyright">Создание сайтов в<br/>Набережных Челнах</div></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+
+<div style="display: none;">
+	<div class="box-modal boxm-call" id="boxUserFirstInfo">
+		<div class="box-modal_close arcticmodal-close"><span><em aria-hidden="true"></em></span></div>
+		<div>
+			<h2 class="center">Заказать звонок</h2>
+			<!-- При убрать комментарий
+			$MFORM_2$
+			-->
+			<!-- При натяжке удалить -->
+			<form method="post" name="mform" style="margin:0">
+				<div class="col2">
+					<div><input type="text" name="f3" size="30" maxlength="70" aria-invalid="false" placeholder="Имя"></div>
+					<div><input id="phone1" type="tel" name="f4" size="30" maxlength="70" placeholder="Номер телефона"></div>
+				</div>
+				<div class="center">
+					<textarea name="f5" size="30" maxlength="70" aria-invalid="false" placeholder="Текст сообщения"></textarea>
+					<div style="display: none;"><input type="text" name="f1" size="30" maxlength="70" value="zakaz@sitename.ru"> </div>
+					<div style="display: none;"><input type="text" name="f2" size="30" maxlength="70" value="sitename.ru - Заказать звонок"> </div>
+					<input class="button yeelow" type="submit" value="Заказать звонок">
+				</div>
+				<div class="center">
+					<small>Нажимая кнопку «Заказать звонок», вы подтверждаете свое согласие на обработку персональных данных и принимаете <span class="toogleprivacy"><a href="javascript:void(0);">пользовательское соглашение</a></span>.</small>
+				</div>
+			</form>
+			<!-- END. При натяжке удалить -->
+		</div>
+	</div>
+</div>
+
+
+
+<div style="display: none;">
+	<div class="box-modal boxm-feedback" id="boxUserFirstInfo2">
+		<div class="box-modal_close arcticmodal-close"><span><em aria-hidden="true"></em></span></div>
+		<div>
+			<h2>Оставить заявку</h2>
+			$MFORM_3$
+		</div>
+	</div>
+</div>
+
+
+
+<div style="display: none;">
+	<div class="box-modal boxm-login" id="boxUserLogin">
+		<div class="box-modal_close arcticmodal-close"><span><em aria-hidden="true"></em></span></div>
+		<div>
+			<h2>Вход на сайт</h2>
+			$LOGIN_FORM$
+		</div>
+	</div>
+</div>
+
+
+
+<div style="display: none;">
+	<div class="box-modal privacy" id="boxUserPrivacy">
+		<div class="box-modal_close arcticmodal-close"><span><em aria-hidden="true"></em></span></div>
+		<div>
+			<h2>Пользовательское соглашение</h2>
+			<p>Настоящее пользовательское соглашение (далее - «Соглашение») регулирует порядок работы настоящего сайта (далее - «Сайт»), определяет условия использования материалов и сервисов Сайта. </p>
+			<p>Администратор Сайта указывает информацию о себе, а также, контактные данные для обратной связи на Сайте.</p>
+			<p>Настоящее Соглашение является публичной офертой в соответствии с действующим законодательством Российской Федерации. Совершение конклюдентных действий физическими, либо юридическими лицами (далее - «Пользователь»), направленных на использование Сайта считается безусловным принятием (акцептом) данного Соглашения. Настоящим Пользователь подтверждает, что акцепт Соглашения равносилен подписанию и заключению Соглашения на условиях, изложенных в настоящем Соглашении.</p>
+			<br/>
+			<br/>
+			<h3>Условия пользования сайтом</h3>
+			<br/>
+			<p>1. Использование любых материалов и сервисов Сайта регулируется нормами действующего законодательства Российской Федерации. Материалы и сервисы Сайта предназначены исключительно для использования в законных целях.</p>
+			<p>2. Пользователь вправе по своему усмотрению знакомиться с материалами сайта и сервисами Сайта, заказывать и приобретать товары и/или услуги предлагаемые на Сайте.</p>
+			<p>3. Пользователь соглашается использовать Сайт, не нарушая имущественных и/или неимущественных прав третьих лиц, а равно запретов и ограничений, установленных применимым правом, включая без ограничения: авторские и смежные права, права на товарные знаки, знаки обслуживания и наименования мест происхождения товаров, права на промышленные образцы, права использовать изображения людей, а также любых действий, которые приводят или могут привести к нарушению нормальной работы Сайта и сервисов Сайта, в частности используя программы для вмешательства или попытки вмешательства в процесс нормального функционирования Сайта.</p>
+			<p>4. Использование материалов Сайта без согласия правообладателя не допускается. Для правомерного использования материалов Сайта необходимо согласие Администратора сайта или правообладателя материалов.</p>
+			<p>5. При наличии технической возможности Пользователь вправе оставлять комментарии и иные записи на Сайте. Пользователь гарантирует, что комментарии или иные записи не нарушают применимого законодательства, не содержат материалов незаконного, непристойного, клеветнического, дискредитирующего, угрожающего, порнаграфического, враждебного характера, а также содержащих домогательства и признаки расовой или этнической дискриминации, призывающих к совершению действий, которые могут быть квалифицированы как уголовные преступления, равно как и считаться недопустимыми по иным причинам, материалов, пропагандирующих культ насилия и жестокости, материалов, содержащих нецензурную брань. Администрация Сайта не обязуется проводить предварительную модерацию материалов и записей на Сайте Пользователями. За комментарии и записи на Сайте оставленные Пользователем, Пользователь несет ответственность самостоятельно и в полном объеме.</p>
+			<p>6. Администратор Сайта не несет ответственности за посещение и использование Пользователем внешних ресурсов, ссылки на которые могут содержаться на Сайте, Пользователь переходит по ссылкам содержащимся на Сайте на внешние ресурсы, по своему усмотрению на свой страх и риск.</p>
+			<p>7. Пользователь согласен с тем, что Администрация Сайта не несет ответственности перед Пользователем в связи с любыми возможными или возникшими потерями или убытками, связанными с любым содержанием Сайта, товарами или услугами, доступными на Сайте или полученными через внешние сайты или ресурсы, либо иные контакты Пользователя, в которые он вступил, используя размещенную на Сайте информацию или ссылки на внешние ресурсы.</p>
+			<p>8. Предоставление в любой форме (регистрация на Сайте, осуществление заказов, подписка на рекламные рассылки и тд.) своих персональных данных Администрации сайта, Пользователь выражает согласие на обработку персональных данных Администрацией сайта в соответствии с Федеральным законом "О персональных данных” от 27.07.2006 №152-ФЗ. Обработка персональных данных Пользователя регулируется действующим законодательством Российской Федерации и Политикой конфиденциальности Сайта.</p>
+			<p>9. Администратор Сайта вправе в любое время в одностороннем порядке, без каких либо уведомлений Пользователя, изменять содержимое Сайта, а также изменять условия настоящего Соглашения. Такие изменения вступают в силу с момента размещения новой версии Соглашения на данной странице. Актуальная версия Соглашения всегда расположена на данной странице. Для избежания споров по поводу изменения Соглашения Администратор Сайта рекомендует периодически ознакамливаться с содержимым Соглашения расположенного на данной странице. При несогласии Пользователя с внесенными изменениями он обязан отказаться от использования Сайта.</p>
+			<p>10. Администратор Сайта вправе в одностороннем порядке ограничивать доступ Пользователя на Сайт, если будет обоснованно считать, что Пользователь ведет неправомерную деятельность. Кроме того, администратор вправе удалять материалы Пользователей по требованию уполномоченных органов государственной власти или заинтересованных лиц в случае, если данные материалы нарушают применимое законодательство или права третьих лиц.</p>
+			<p>11. Администратор Сайта и Пользователь несут ответственность за неисполнение или ненадлежащее исполнение своих обязательств в соответствии с Соглашением и действующим законодательством Российской Федерации. Администратор Сайта не несет ответственность за технические перебои в работе Сайта, вместе с тем Администратор Сайта обязуется принимать все разумные меры для предотвращения таких перебоев.</p>
+			<p>12. Все возможные споры, вытекающие из настоящего Соглашения или связанные с ним, подлежат разрешению в соответствии с действующим законодательством Российской Федерации.</p>
+			<p>13. Все данные, размещенные или размещаемые на настоящем Сайте, находятся на оборудовании находящемся на территории Российской Федерации.</p>
+			<p>14. Администратор вправе прекращать работу Сайта, а равно частично или полностью прекращать доступ к сайту до завершения необходимого технического обслуживания и (или) модернизации Сайта.</p>
+			<p>15. Совершая действия по принятию настоящего Соглашения (оферты), Пользователь гарантирует, что ознакомлен, соглашается, полностью и безоговорочно принимает все условия Соглашения в целом, обязуется их соблюдать.</p>
+			<br/>
+			<br/>
+			<br/>
+			<h2>Политика конфиденциальности</h2>
+			<p>Настоящая Политика конфиденциальности является составной частью Пользовательского соглашения Сайта и действует в отношении всей информации, в том числе персональных данных Пользователя, получаемых Администрацией Сайта в процессе работы Пользователя с Сайтом, исполнения Пользовательского соглашения и соглашений между Администрацией сайта и Пользователем. Использование Сайта означает безоговорочное согласие Пользователя с настоящей Политикой конфиденциальности и указанными в ней условиями обработки его персональных данных; в случае несогласия с этими условиями Пользователь должен воздержаться от использования Сайта.</p>
+			<p>Перед использованием Сайта Пользователю необходимо внимательно изучить настоящую Политику конфиденциальности.</p>
+			<br/>
+			<br/>
+			<h3>1. ПЕРСОНАЛЬНЫЕ ДАННЫЕ</h3>
+			<br/>
+			<p>1.1. Предоставление в любой форме (регистрация на Сайте, осуществление заказов, подписка на рекламные рассылки и тд.) своих персональных данных Администрации сайта, Пользователь выражает согласие на обработку персональных данных Администрацией сайта в соответствии с Федеральным законом "О персональных данных” от 27.07.2006 №152-ФЗ.</p>
+			<p>1.2. Обработка персональных данных осуществляется в целях исполнения Пользовательского соглашения и иных соглашений между Администрацией сайта и Пользователем.</p>
+			<p>1.3. Обработка персональных данных производится исключительно на территории Российской Федерации, с соблюдением действующего законодательства Российской Федерации.</p>
+			<p>1.4. Согласие Пользователя на обработку его персональных данных дается Администрации сайта на срок исполнения обязательств между Пользователем и Администрацией сайта в рамках Пользовательского соглашения или других соглашений между Пользователем и Администрацией сайта.</p>
+			<p>1.5. В случае отзыва согласия на обработку персональных данных Пользователя, Пользователь уведомляет об этом Администрацию Сайта письменно или по электронной почте. После получения данного уведомления Администрация Сайта прекращает обработку персональных данных Пользователя и удаляет.</p>
+			<p>1.6. Сайт не имеет статуса оператора персональных данных. Персональные данные Пользователя не передаются каким-либо третьим лицам, за исключением случаев, прямо предусмотренных настоящей Политикой конфиденциальности.</p>
+			<br/>
+			<br/>
+			<h3>2. Меры по защите персональных данных</h3>
+			<br/>
+			<p>2.1. В своей деятельности Администрация сайта руководствуется Федеральным законом "О персональных данных” от 27.07.2006 №152-ФЗ.</p>
+			<p>2.2. Администрация сайта принимает все разумные меры по защите персональных данных Пользователей и соблюдает права субъектов персональных данных, установленные действующим законодательством Российской Федерации.</p>
+			<p>2.3. Защита персональных данных Пользователя осуществляется с использованием физических, технических и административных мероприятий, нацеленных на предотвращение риска потери, неправильного использования, несанкционированного доступа, нарушения конфиденциальности и изменения данных. Меры обеспечения безопасности включают в себя межсетевую защиту и шифрование данных, контроль физического доступа к центрам обработки данных, а также контроль полномочий на доступ к данным.</p>
+			<br/>
+			<br/>
+			<h3>3. Изменение политики конфиденциальности</h3>
+			<br/>
+			<p>3.1. Администрация сайта оставляет за собой право в одностороннем порядке вносить любые изменения в Политику конфиденциальности без предварительного уведомления Пользователя. Актуальный текст Политики конфиденциальности размещен на данной странице.</p>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- Общие скрипты -->
+<script src="js/general.js"></script>
+<!-- Главный слайдер iosSlider -->
+<script src="js/jquery.iosslider.js"></script>
+<!-- Дополнительный слайдер slick -->
+<script src="js/slick.js"></script>
+</body>
+</html>

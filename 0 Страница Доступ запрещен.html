@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title><?if($SEO_TITLE$)?>$SEO_TITLE$<?else?><?if($URI_ID$='page1')?><?else?>$MODULE_NAME$ | <?endif?>$SITE_NAME$<?endif?></title>
+<meta name="keywords" content="<?if($SEO_KEYWORDS$)?>$SEO_KEYWORDS$<?else?>$MODULE_NAME$, $SITE_NAME$<?endif?>" />
+<meta name="description" content="<?if($SEO_DESCRIPTION$)?>$SEO_DESCRIPTION$<?else?>$MODULE_NAME$ | $SITE_NAME$<?endif?>" />
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="$SITE_NAME$"/>
+<meta property="og:title" content="<?if($SEO_TITLE$)?>$SEO_TITLE$<?else?>$MODULE_NAME$ | $SITE_NAME$<?endif?>"/>
+<meta property="og:description" content="<?if($SEO_DESCRIPTION$)?>$SEO_DESCRIPTION$<?else?>$MODULE_NAME$ | $SITE_NAME$<?endif?>"/>
+<meta property="og:url" content="$HOME_PAGE_LINK$$REQUEST_URI$"/>
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="$HOME_PAGE_LINK$img/promo.png">
+
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/default.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/style.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/animate.css" />
+
+<link rel="icon" type="image/x-icon" href="$HOME_PAGE_LINK$favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="$HOME_PAGE_LINK$favicon.ico" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" />
+</head>
+
+
+<body>
+$GLOBAL_AHEADER$
+		<section id="contentbody">
+			<div class="contentcenter">
+				$GLOBAL_CLEFTER$
+				<div class="content">
+					<h1>Доступ запрещен</h1>
+					<br/>
+					<!-- <body> -->
+					<div class="center">
+						<?if($USER_LOGGED_IN$)?>
+							Вы входите в группу пользователей, которым запрещено совершать данное действие.<br/><br/><br/>По всем вопросам обращайтесь к администратору сайта.
+						<?endif?>
+						<?if(!$USER_LOGGED_IN$)?>
+							Гостям запрещено просматривать данную страницу, пожалуйста, войдите на сайт как пользователь.<br/>
+							<br/>
+							<span class="tooglelog"><a href="javascript:void(0);"><h4>Вход</h4></a></span>
+						<?endif?>
+					</div>
+					<!-- </body> -->
+				</div><!-- end .content -->
+			</div><!-- end .contentcenter -->
+		</section>
+		$GLOBAL_BFOOTER$
+</body>
+</html>

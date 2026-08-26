@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title><?if($SEO_TITLE$)?>$SEO_TITLE$<?else?><?if($URI_ID$='page1')?><?else?>$MODULE_NAME$ | <?endif?>$SITE_NAME$<?endif?></title>
+<meta name="keywords" content="<?if($SEO_KEYWORDS$)?>$SEO_KEYWORDS$<?else?>$MODULE_NAME$, $SITE_NAME$<?endif?>" />
+<meta name="description" content="<?if($SEO_DESCRIPTION$)?>$SEO_DESCRIPTION$<?else?>$MODULE_NAME$ | $SITE_NAME$<?endif?>" />
+
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/default.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/style.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/animate.css" />
+
+<link rel="icon" type="image/x-icon" href="$HOME_PAGE_LINK$favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="$HOME_PAGE_LINK$favicon.ico" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous" />
+<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+$GLOBAL_AHEADER$
+		<section id="contentbody">
+			<div class="contentcenter">
+				$GLOBAL_CLEFTER$
+				<div class="content">
+					<!-- <body> -->
+					<div class="breadcrumbs-wrapper">
+						<div class="breadcrumbs"><a href="$HOME_PAGE_LINK$"><!--<s5176>-->Главная<!--</s>--></a> &raquo; Отзывы</div>
+						<?if($SIGN_LINK$ || $READ_LINK$)?><div class="add-link-wrapper">[ <a class="add-link" href="<?if($SIGN_LINK$)?>$SIGN_LINK$"><!--<s5205>-->Добавить отзыв<!--</s>--><?endif?>
+						<?if($READ_LINK$)?>$READ_LINK$"><!--<s5206>-->Читать отзывы<!--</s>--><?endif?></a> ]</div><?endif?>
+					</div>
+					<hr/>
+					<h1>Отзывы</h1>
+					<br/>
+					$BODY$
+					<!-- </body> -->
+				</div><!-- end .content -->
+			</div><!-- end .contentcenter -->
+		</section>
+		$GLOBAL_BFOOTER$
+<style type="text/css">
+#allEntries>div {width: calc(50% - 20px);}
+</style>
+</body>
+</html>

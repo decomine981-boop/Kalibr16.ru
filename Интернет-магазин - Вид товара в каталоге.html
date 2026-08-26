@@ -1,0 +1,31 @@
+<!--ENTRY$ID$-->
+<div class="shopItem product1">
+	<a href="$ENTRY_URL$">
+		<div class="productimg">
+			<img class="gphoto" id="$BLOCK_PREF$-gphoto-$ID$" src="$THUMB$" alt="$NAME$" title="$NAME$" />
+			<?if($STOCK$)?><div class="other">$STOCK$</div><?endif?>
+			<?if ($MONTH$-substr($ADD_DATE$,3,2))<=1 || $ADD_DATE$='Сегодня' ?><div class="new">NEW</div><?endif?>
+			<?if($OTHER1$='new' || $OTHER1$='Новинка')?><div class="new">$OTHER1$</div><?endif?>
+			<?if($OTHER1$='hot' || $OTHER1$='Скидка')?><div class="hot">$OTHER1$</div><?endif?>
+			<?if($OTHER1$='хит' || $OTHER1$='Хит продаж')?><div class="hit">$OTHER1$</div><?endif?>
+		</div>
+		<h3><?substr($NAME$,0,50)?> <?if($MODER_PANEL$)?><div style="position: absolute; top: 50px; right: 10px;">$MODER_PANEL$</div><?endif?></h3>
+	</a>
+	<?if($RATING$)?><div class="shop-item-rating"><?$RSTARS$('12','/.s/img/stars/3/12.png','0','float')?></div><?endif?>
+	$OPTIONS$
+	<div class="value-numb">
+		<button class="tic-tac minus" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+		<input type="number" id="q$BLOCK_PREF$-$ID$-basket" value="1" min="1" max="$STOCK$" step="1" readonly class="form-control" size="3" onfocus="this.select()" oninput="return checkNumber(this, event, '1');">
+		<button class="tic-tac plus" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+	</div>
+	<div class="price">
+		<div class="goods-list">$2BASKET$</div>
+		<small>Цена:</small>
+		<?if($PRICE$)?>
+			<?if($PRICE_OLD$)?><sup><s>$PRICE_OLD$</s></sup> <span class="newprice">$PRICE$</span><?else?>$PRICE$<?endif?> <!--<i class="fas fa-ruble-sign"></i>-->
+			<?else?>
+			по запросу
+		<?endif?>
+	</div>
+</div>
+<!--/ENTRY$ID$-->

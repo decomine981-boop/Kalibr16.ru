@@ -1,0 +1,25 @@
+<table border="0" cellspacing="1" cellpadding="0" width="100%">
+	<?if($ERROR$)?><tr><td colspan="2" style="color:red;text-align:center;">$ERROR$</td></tr><?endif?>
+	<tr>
+		<td width="20%" nowrap="nowrap">Логин:</td>
+		<td><input class="loginField" type="text" name="user" value="" size="20" style="width:100%;" maxlength="50"/></td>
+	</tr>
+	<tr>
+		<td>Пароль:</td>
+		<td><input class="loginField" type="password" name="password" size="20" style="width:100%" maxlength="32"/></td>
+	</tr>
+	<?if($SECURITY_CODE$)?><tr><td colspan="2">$SECURITY_CODE$</td></tr><?endif?>
+</table>
+
+
+<table border="0" cellspacing="1" cellpadding="0" width="100%">
+	<tr>
+		<td>
+			<input id="rem$PAGE_ID$" type="checkbox" name="rem" value="1" checked="checked"/><label for="rem$PAGE_ID$">запомнить</label>
+			<?if($PAGE_ID$="login" && $HIDDEN_ALLOWED$)?><br /><input id="hid$PAGE_ID$" type="checkbox" name="hidden" value="1" /><label for="hid$PAGE_ID$">скрытый</label><?endif?>
+		</td>
+		<td align="right" valign="top">
+			<input class="loginButton" name="sbm" type="submit" value="Вход"/>
+		</td>
+	</tr>
+</table>

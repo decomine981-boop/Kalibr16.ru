@@ -1,0 +1,84 @@
+<?if($URI_ID$='page1')?>
+<?else?>
+<div class="sidebar">
+	<!--
+	<?if($MODULE_ID$ == "shop" && ($PAGE_ID$ == "category"))?>
+	<?if(strpos($FILTER_SELECTOR$,"Все")!= -1)?>
+	<br/>
+	<div class="sidebarcenter wow fadeInLeft" data-wow-delay="0.6s">
+		<div class="sidebarshadow">
+			<div id="slider-price" style="display:none;margin-bottom:30px;"><input type="text" id="default_rangeSlider" name="default_rangeSlider" value="" /></div>
+			<?if($FILTER_SELECTOR$ && ($PAGE_ID$ != 'allgoods'))?><?$DRAW_BLOCK$('FILTER_SELECTOR','flist')?><?endif?><button class="reset-filters" onclick="resetAll();">Сбросить фильтры</button>
+			<script type="text/javascript" src="/php/multifilter/multifilter.php?cid=$CID$"></script>
+		</div>
+	</div>
+	<br/>
+	<?else?><?endif?>
+	<?endif?>
+	
+	
+	<div class="sidebarcenter">
+		<div class="sidebarshadow" style="text-align: center;">
+			<h3>Поиск по сайту</h3>
+			<hr/>
+			<div class="searchform-top fadeInDown">
+				<form action="/shop/search" method="post" onsubmit="this.sfSbm.disabled=true">
+					<input class="queryField" type="text" size="20" maxlength="60" name="query" value="Что будем искать?" onfocus="if(this.value=='Что будем искать?')this.value=''" onblur="if(this.value=='')this.value='Что будем искать?'" />   
+					<input class="schBtn" type="submit" value=" " name="sfSbm" class="searchSbmFl" /><label for="before">&nbsp;</label>
+				</form>
+			</div>
+		</div>
+	</div>
+	-->
+	<div class="sidebarcenter">
+		<div class="sidebarshadow">
+			<h2>Каталог товаров</h2>
+			<hr/>
+			<div id="shop_left_menu">
+			<?$SHOP_HMENU$('ul')?>
+			</div>
+			<!--
+			<div id="shop_left_menu">
+				<ul id="shop-hmenu" class="hmenu-onhover">
+					<li class="hmenu-item">
+						<a class="hmenu-link" href="#"><span>Запчасти для автокрана XCMG</span></a>
+					</li>
+
+					<li class="hmenu-item">
+						<a class="hmenu-link collapsed collapsible" href="#"><span>Запчасти для двигателя Shanghai DongFeng</span></a>
+						<div class="hmenu-cont" style="display: none;">
+							<ol class="hmenu-cont-block with-clear">
+								<li class="hmenu-subc-ol hmenu-subc level2">
+									<div><a href="#">Двигатель 6CL280-2 6C250-2 6C215-2 Shanghai DongFeng</a></div>
+								</li>
+								<li class="hmenu-item">
+									<a class="hmenu-link hmenu-subc level2 sample-menuA" href="#"><span>Запчасти для двигателя Shanghai DongFeng</span></a>
+								</li>
+								<li class="hmenu-subc-ol hmenu-subc level2">
+									<div><a href="#">Двигатель SC9DF290Q4 Shanghai DongFeng</a></div>
+								</li>
+							</ol>
+						</div>
+					</li>
+
+					<li class="hmenu-item">
+						<a class="hmenu-link sample-menuA" href="/shop/digital-goods"><span>Тестовая категория</span></a>
+					</li>
+				</ul>
+			</div>
+			-->
+		</div>
+	</div>
+
+	<!--
+	<br/>
+	<div class="sidebarcenter">
+		<div class="sidebarshadow">
+			<h3 style="text-align: center;">Прайс-листы</h3>
+			<hr/>
+			$MYINF_1$
+		</div>
+	</div>
+	-->
+</div><!-- end .sidebar -->
+<?endif?>

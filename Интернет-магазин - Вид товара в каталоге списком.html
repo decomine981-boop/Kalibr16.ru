@@ -1,0 +1,37 @@
+<!--ENTRY$ID$-->
+<div class="shopItem product4">
+	<a href="$ENTRY_URL$">
+		<div class="productimg">
+			<img class="gphoto" id="$BLOCK_PREF$-gphoto-$ID$" src="$THUMB$" alt="$NAME$" title="$NAME$" />
+		</div>
+	</a>
+	<div class="art"><span>$OTHER4$</span></div>
+	<div class="otherleft">
+		<a href="$ENTRY_URL$">
+			<h3><?substr($NAME$,0,50)?> <?if($MODER_PANEL$)?><div style="position: absolute; top: 0px; right: -30px;">$MODER_PANEL$</div><?endif?></h3>
+		</a>
+	</div>
+	<div class="stock">
+		<small>Наличие:</small><br/>
+		<b>$STOCK$ шт.</b>
+	</div>
+	<div class="value-numb">
+		<button class="tic-tac minus" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+		<input type="number" id="q$BLOCK_PREF$-$ID$-basket" value="1" min="1" max="$STOCK$" step="1" readonly class="form-control" size="3" onfocus="this.select()" oninput="return checkNumber(this, event, '1');">
+		<button class="tic-tac plus" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+	</div>
+	<div class="price">
+		<div class="goods-list">$2BASKET$</div>
+		<small>Цена:</small>
+		<?if($PRICE_RAW$='1')?>
+			По запросу
+		<?else?>
+			<?if($PRICE$)?>
+				<?if($PRICE_OLD$)?><sup><s>$PRICE_OLD$</s></sup> <span class="newprice">$PRICE$</span><?else?>$PRICE$<?endif?> <!--<i class="fas fa-ruble-sign"></i>-->
+				<?else?>
+				по запросу
+			<?endif?>
+		<?endif?>
+	</div>
+</div>
+<!--/ENTRY$ID$-->

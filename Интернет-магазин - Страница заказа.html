@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>$TITLE$ - $MODULE_NAME$ | $SITE_NAME$</title>
+<meta name="keywords" content="$TITLE$, $MODULE_NAME$, $SITE_NAME$" />
+<meta name="description" content="$TITLE$ - $MODULE_NAME$ | $SITE_NAME$">
+
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/default.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/style.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/animate.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/mobile.css" />
+
+<link rel="icon" type="image/x-icon" href="$HOME_PAGE_LINK$favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="$HOME_PAGE_LINK$favicon.ico" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous" />
+<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+$GLOBAL_AHEADER$
+		<section id="contentbody">
+			<div class="contentcenter">
+				$GLOBAL_CLEFTER$
+				<div class="content">
+					<!-- <body> -->
+					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="font-size: 12px;">
+						<tr>
+							<td>$SHOP_PATH$</td>
+							<td align="right" class="nowrap"><b>Статус:</b> $ORDER_STATUS$</td>
+						</tr>
+					</table>
+					<hr/>
+					<h1>Заказ № $ORDER_CODE$</h1>
+					<br/>
+					$BODY$
+
+<?if($DIGITAL_ITEM_1$)?>
+<div style="text-align:center; font-size:1.6em; padding:15px; line-height:150%;"><?$DIGITAL_GOODS$('<!--<s5481>-->Получить<!--</s>--> %NAME% %SIZE%')?></div>
+<?endif?>
+<!-- Кнопки печати заказа
+$ORDER_PRINT$ $ORDER_PDF$
+-->
+<?if($ORDER_FIELDS$)?>
+<h2>Информация о заказчике</h2>
+<br/>
+<div id="order-info" class="commFl">$ORDER_FIELDS$</div>
+<br/>
+<hr/>
+<?endif?>
+<br>
+<div class="col2">
+	<div>
+		<h2>Способ оплаты</h2>
+		<h4>$PAYMENT$</h4>
+		<p>$PAYMENT_DESCR$</<p>
+
+		<?if($PAY_NOW$)?><td style="text-align:right;padding-left:20px;"><h3>$ORDER_TOPAY_CURR$</h3>$PAY_NOW$</td><?endif?>
+	</div>
+	<div>
+		<?if($DELIVERY$)?>
+		<h2>Способ доставки</h2>
+		<h4>$DELIVERY$</h4>
+		<p>$DELIVERY_DESCR$</p>
+
+		<?if($ORDER_TAX$)?><div class="osum order_topay_curr"><?if($ORDER_TAX_EDIT$)?>$ORDER_TAX_EDIT$<?else?>$ORDER_TAX$<?endif?></div><?endif?>
+		<?endif?>
+	</div>
+</div>
+<br/>
+<hr/>
+<br/>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<?if($ORDER_DISCOUNT$)?>
+	<tr>
+		<td><h3><!--<s4608>-->Скидка по дисконту<!--</s>--></h3></td>
+		<td id="order_discount" style="text-align:right;padding-left:20px; font-size:16px;">$ORDER_DISCOUNT$</td>
+	</tr>
+	<?endif?>
+	<tr valign="top">
+		<td><h3><!--<s4513>-->К оплате<!--</s>--></h3></td>
+		<td id="order_topay" style="text-align:right;padding-left:20px; font-size:16px;"><?if($ORDER_DISCOUNT$)?><strike>$ORDER_TOTAL$</strike><br><?endif?>$ORDER_TOPAY$</td>
+	</tr>
+</table>
+
+<div style="padding:20px 0; text-align:right; font-style: italic;">
+	<b><!--<s4522>-->Добавлен<!--</s>-->:</b> $ADD_DATE$, $ADD_TIME$ <?if($MOD_TIME$)?> <b><!--<s4523>-->Изменён<!--</s>-->:</b> $MOD_DATE$, $MOD_TIME$<?endif?>
+</div>
+					<!-- </body> -->
+				</div> <!-- end .content -->
+			</div><!-- end .contentcenter -->
+		</section>
+$GLOBAL_BFOOTER$
+</body>
+</html>	

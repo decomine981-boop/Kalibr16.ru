@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title><?if($SEARCH_QUERY$)?>$SEARCH_QUERY$ - <?endif?>Поиск по сайту $SITE_NAME$</title>
+<?$META_DESCRIPTION$?>
+<?$META_KEYWORDS$?>
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="$SITE_NAME$">
+<meta property="og:title" content="<?if($SEARCH_QUERY$)?>$SEARCH_QUERY$ - <?endif?>Поиск по сайту $SITE_NAME$">
+<meta property="og:description" content="<?if($SEARCH_QUERY$)?>$SEARCH_QUERY$ - <?endif?>Поиск по сайту $SITE_NAME$">
+<meta property="og:url" content="$HOME_PAGE_LINK$">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="$HOME_PAGE_LINK$img/promo.png">
+
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/default.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/style.css" />
+<link rel="stylesheet" href="$HOME_PAGE_LINK$css/animate.css" />
+
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+$GLOBAL_AHEADER$
+		<section id="contentbody">
+			<div class="contentcenter">
+				$GLOBAL_CLEFTER$
+				<div class="content">
+					<!-- <body> -->
+					<h1>Поиск по сайту</h1>
+					<br/>
+					<div style="padding:0 0 5px 0;">$SEARCHFORM$</div>
+					<div style="padding:4px 4px 0 4px;"><!--<s5248>-->Результаты <b>$NUM_SHOWN$</b> из <b>$NUM_ENTRIES$</b> по запросу <b>$SEARCH_QUERY$</b><!--</s>--></div>
+					<hr/>
+					$BODY$
+					<?if($PAGE_SELECTOR$)?><hr/><div class="paging-wrapper-bottom">$PAGE_SELECTOR$</div><?endif?><!-- </body> -->
+					<!-- </body> -->
+				</div><!-- end .content -->
+			</div><!-- end .contentcenter -->
+		</section>
+		$GLOBAL_BFOOTER$
+</body>
+</html>

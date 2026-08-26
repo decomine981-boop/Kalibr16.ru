@@ -1,0 +1,29 @@
+<div class="list-item" id="id-item-$ID$">
+	<!--ENTRY$ID$-->
+	<div class="shopItem product2">
+		<div class="shopImg">
+			<a href="$ENTRY_URL$"><img width="196px" height="196px" alt="$NAME$" src="$THUMB$" class="gphoto" id="$BLOCK_PREF$-gphoto-$ID$"><?if($MODER_PANEL$)?><div style="position: absolute; top: 10px; right: 10px;">$MODER_PANEL$</div><?endif?></a>
+		</div>
+		<a href="$ENTRY_URL$" class="shopName"><?substr($NAME$,0,50)?></a>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+				<tr>
+					<td style="width: 45%; text-align: left; font-size: 10px; color: #999; vertical-align: top;">
+	                    <?if($ART_NO$)?>Артикул:<br/><b style="color: #333;">$ART_NO$</b><?endif?>
+	                </td>
+					<td style="text-align: right; font-size: 10px; color: #999;">
+	                	Цена:<br/>
+	                    <?if($PRICE$)?>
+	                    	<div style="font-size: 15px; color: #333;"><?if($PRICE_OLD$)?><sup><s>$PRICE_OLD$</s></sup> <span class="newprice">$PRICE$</span><?else?>$PRICE$<?endif?></div>
+	                        <div class="goods-list">$2BASKET$</div>
+							<?else?>
+	                    	<div style="font-size: 15px; color: #333;">по запросу</div>
+							<div class="goods-list">$2BASKET$</div>
+	                    <?endif?>
+	                </td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!--/ENTRY$ID$-->
+</div>

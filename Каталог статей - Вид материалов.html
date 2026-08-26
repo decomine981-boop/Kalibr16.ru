@@ -1,0 +1,20 @@
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="eBlock">
+	<tr>
+		<td style="padding:3px;">
+			<?if($MODER_PANEL$)?><div style="float:right">$MODER_PANEL$</div><?endif?>
+			<div class="eTitle" style="text-align:left;"><h2><a href="$ENTRY_URL$">$TITLE$</a></h2></div>
+			<?if($MESSAGE$)?><div class="eMessage" style="text-align:left;clear:both;padding-top:2px;padding-bottom:2px;">$MESSAGE$</div><?endif?>
+
+			<div class="eDetails" style="clear:both;">
+				<?if($RATING$)?><div class="rate-stars-wrapper" style="float:right"><?$RSTARS$('15','/.s/t/1081/rating15.png','0','float')?></div><?endif?>
+				<?if($CATEGORY_NAME$)?><a class="e-category" href="$CATEGORY_URL$">$CATEGORY_NAME$</a><span class="ed-sep"> | </span><?endif?>
+				<span class="e-reads"><span class="ed-title">Просмотров:</span> <span class="ed-value">$READS$</span></span><span class="ed-sep"> | </span>
+				<?if($AUTHOR_NAME$)?><span class="e-author"><span class="ed-title">Author:</span> <span class="ed-value">$AUTHOR_NAME$</span></span><span class="ed-sep"> | </span><?endif?>
+				<?if($USERNAME$)?><span class="e-add"><span class="ed-title">Добавил:</span> <span class="ed-value"><a href="$PROFILE_URL$">$USERNAME$</a></span></span><span class="ed-sep"> | </span><?endif?>
+				<span class="e-date"><span class="ed-title">Дата:</span> <span class="ed-value"title="$TIME$">$DATE$</span></span>
+				<?if($COMMENTS_URL$)?><span class="ed-sep"> | </span><a class="e-comments" href="$COMMENTS_URL$">Комментарии ($COMMENTS_NUM$)</a><?endif?>
+			</div>
+		</td>
+	</tr>
+</table>
+<br/>
